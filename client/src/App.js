@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import EditProfile from "./component/EditProfile";
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
 
@@ -35,7 +35,8 @@ function App() {
         {profiles && profiles.length > 0 ? (
           profiles.map((profile) => renderProfile(profile))
         ) : (
-          <p>No profiles found</p>
+          //<p>No profiles found</p>
+            <EditProfile/>
         )}
       </ul>
     </div>
