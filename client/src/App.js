@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-// SERVICES THAT CALL OUR API ENDPOINTS
-import { getAllProfiles } from "./services/profileService";
 import Homepage from "./pages/Homepage"
 import About from "./pages/About"
 import EditProfile from "./components/EditProfile"
+import SignIn from "./components/SignIn";
+import Register from "./components/Register";
+
+
+// SERVICES THAT CALL OUR API ENDPOINTS
+import { getAllProfiles } from "./services/profileService";
+
 
 function App() {
   const [profiles, setProfiles] = useState(null);
@@ -44,7 +50,11 @@ function App() {
           <BrowserRouter>
               <Route exact path="/" render={() =>(<Homepage/>)}/>
               <Route exact path="/about" render={() =>(<About/>)} />
+              <Route exact path="/signin" render={() =>(<SignIn/>)} />
+              <Route exact path="/register" render={() =>(<Register/>)} />
+
           </BrowserRouter>
+          
            {/* <EditProfile/> */}
         </>  
          
