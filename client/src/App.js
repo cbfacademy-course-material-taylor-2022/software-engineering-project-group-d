@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Homepage from "./pages/Homepage";
-import About from "./pages/About";
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
+import Homepage from "./pages/Homepage"
+import About from "./pages/About"
+import EditProfile from "./components/EditProfile"
 
 function App() {
   const [profiles, setProfiles] = useState(null);
@@ -38,15 +39,15 @@ function App() {
         {profiles && profiles.length > 0 ? (
           profiles.map((profile) => renderProfile(profile))
         ) : (
-      
           <>
           {/* <p>No profiles found</p> */}
-        
           <BrowserRouter>
               <Route exact path="/" render={() =>(<Homepage/>)}/>
               <Route exact path="/about" render={() =>(<About/>)} />
           </BrowserRouter>
+           {/* <EditProfile/> */}
         </>  
+         
         )}
       </ul>
     </div>
