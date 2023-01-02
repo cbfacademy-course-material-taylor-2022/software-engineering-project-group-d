@@ -3,8 +3,8 @@ export default function Logo() {
 
     return <>
         <img 
-            src="imgs/TravelLogo.png"
-            alt="Wheel" 
+            src="imgs/Passion4Travel.png"
+            alt="Logo" 
             style={{ width: "400px"}}/>
     </>
    }

@@ -9,7 +9,7 @@ return <>
     <img 
             align-items="center"
             src="imgs/TravelLogo.png"
-            alt="Wheel" 
+            alt="Logo" 
             style={{ width: "40px"}}/>
     <Link to ='/'>Home</Link> <n/>
     <Link to ='/about'>About</Link>
