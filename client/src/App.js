@@ -7,6 +7,8 @@ import About from "./pages/About"
 import EditProfile from "./components/EditProfile"
 import SignIn from "./components/SignIn";
 import Register from "./components/Register";
+import UserHome from "./pages/UserHome";
+import ProfilePage from "./pages/profilePage";
 
 
 // SERVICES THAT CALL OUR API ENDPOINTS
@@ -57,15 +59,19 @@ function App() {
 =======
           <>
           {/* <p>No profiles found</p> */}
+           
           <BrowserRouter>
-              <Route exact path="/" render={() =>(<Homepage/>)}/>
+              <Route exact path="/" render={() =>(<UserHome/>)}/>
               <Route exact path="/about" render={() =>(<About/>)} />
               <Route exact path="/signin" render={() =>(<SignIn/>)} />
               <Route exact path="/register" render={() =>(<Register/>)} />
-
+              <Route exact path="/profile" render={() =>(<ProfilePage/>)} />
+              <Route exact path="/editProfile" render={() =>(<EditProfile/>)} />
           </BrowserRouter>
-          
+     
+           
            {/* <EditProfile/> */}
+           {/* <UserHome/> */}
         </>  
          
 >>>>>>> e4c031f1eff5c3c0fdf0d565a1d14adc5f0b19b7

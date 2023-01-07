@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
   }
   
   body {
@@ -12,6 +13,7 @@
   }
   
   .nav {
+    position: sticky;
     background-color: rgb(87, 86, 86);
     color: white;
     display: flex;
@@ -19,6 +21,9 @@
     align-items: right;
     gap: 2rem;
     padding: 0 1rem;
+    width: 95%;
+    
+    
   }
   
   .site-title {
