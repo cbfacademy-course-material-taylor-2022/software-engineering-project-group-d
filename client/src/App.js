@@ -1,7 +1,17 @@
 import React, { useState, useEffect } from "react";
-import EditProfile from "./component/EditProfile";
+import { BrowserRouter, Route } from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+import Homepage from "./pages/Homepage"
+import About from "./pages/About"
+import EditProfile from "./components/EditProfile"
+import SignIn from "./components/SignIn";
+import Register from "./components/Register";
+
+
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
+
 
 function App() {
   const [profiles, setProfiles] = useState(null);
@@ -41,8 +51,24 @@ function App() {
         {profiles && profiles.length > 0 ? (
           profiles.map((profile) => renderProfile(profile))
         ) : (
+<<<<<<< HEAD
         //<p> No profiles found</p>
             <EditProfile/>
+=======
+          <>
+          {/* <p>No profiles found</p> */}
+          <BrowserRouter>
+              <Route exact path="/" render={() =>(<Homepage/>)}/>
+              <Route exact path="/about" render={() =>(<About/>)} />
+              <Route exact path="/signin" render={() =>(<SignIn/>)} />
+              <Route exact path="/register" render={() =>(<Register/>)} />
+
+          </BrowserRouter>
+          
+           {/* <EditProfile/> */}
+        </>  
+         
+>>>>>>> e4c031f1eff5c3c0fdf0d565a1d14adc5f0b19b7
         )}
       </ul>
     </div>
