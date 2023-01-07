@@ -1,5 +1,15 @@
 import React, { useState, useEffect } from "react";
-import EditProfile from "./component/EditProfile";
+import { BrowserRouter, Route } from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+import Homepage from "./pages/Homepage"
+import About from "./pages/About"
+import EditProfile from "./components/EditProfile"
+import SignIn from "./pages/SignIn";
+import Register from "./pages/Register";
+import UserHome from "./pages/UserHome";
+import ProfilePage from "./pages/profilePage";
+
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
 
@@ -36,7 +46,14 @@ function App() {
           profiles.map((profile) => renderProfile(profile))
         ) : (
           //<p>No profiles found</p>
-            <EditProfile/>
+          <BrowserRouter>
+          <Route exact path="/" render={() =>(<UserHome/>)}/>
+          <Route exact path="/about" render={() =>(<About/>)} />
+          <Route exact path="/signin" render={() =>(<SignIn/>)} />
+          <Route exact path="/register" render={() =>(<Register/>)} />
+          <Route exact path="/profile" render={() =>(<ProfilePage/>)} />
+          <Route exact path="/editProfile" render={() =>(<EditProfile/>)} />
+      </BrowserRouter>
         )}
       </ul>
     </div>
