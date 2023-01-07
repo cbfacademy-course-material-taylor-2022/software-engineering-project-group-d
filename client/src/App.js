@@ -21,8 +21,14 @@ function App() {
     return (
       <li key={user._id}>
         <h3>
-          {`${user.first_name} 
-          ${user.last_name}`}
+          {`${user.fullname} 
+           ${user.email}`}
+           ${user.Age}`}
+           ${user.Gender}`}
+           ${user.Password}`}
+           ${user.ChangePassword}`}
+           ${user.NewPassword}`}
+           
         </h3>
         <p>{user.location}</p>
       </li>
@@ -35,7 +41,7 @@ function App() {
         {profiles && profiles.length > 0 ? (
           profiles.map((profile) => renderProfile(profile))
         ) : (
-          //<p>No profiles found</p>
+        //<p> No profiles found</p>
             <EditProfile/>
         )}
       </ul>
