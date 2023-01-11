@@ -9,10 +9,20 @@ import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
 import UserHome from "./pages/UserHome";
 import ProfilePage from "./pages/profilePage";
+import Post from "./components/post";
+import CreatePost from "./pages/CreatePost";
+// import "./App.css";
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllProfiles } from "./services/profileService";
 
+// function App() {
+//   return (
+//     <div className="App">
+//       <p>Hi I'm Gillian</p>
+//     </div>
+//   );
+// }
 function App() {
   const [profiles, setProfiles] = useState(null);
 
@@ -47,7 +57,7 @@ function App() {
         ) : (
           //<p>No profiles found</p>
           <BrowserRouter>
-          <Route exact path="/" render={() =>(<UserHome/>)}/>
+          <Route exact path="/" render={() =>(<CreatePost/>)}/>
           <Route exact path="/about" render={() =>(<About/>)} />
           <Route exact path="/signin" render={() =>(<SignIn/>)} />
           <Route exact path="/register" render={() =>(<Register/>)} />

@@ -1,48 +1,42 @@
 import React, { useState } from 'react'
-// import {MoreVert} from "@mui/icons-material"
-import '../styles/post.css'
-import {Users} from "../dummyData"
-
-export default function Post({ post }) {
-  const [like, setLike] = useState(post.like)
-  const [isliked, setIsLiked] = useState(false)
-
-  const likeHandler =()=> {
-    setLike(isliked ? like-1 : like+1)
-    setIsLiked(!isliked)
-  }
-  return (
-    <div className='post'>
-      <div className="postWrapper">
-        <div className="postTop">
-            <div className="postTopLeft">
-                <img className='postProfileImg'
-                 src={Users.filter((u) => u.id === post.userId)[0].profilePicture} 
-                alt="profile pic" />
-                <span className="postUsername">
-                  {Users.filter((u) => u.id === post.userId)[0].username}
-                  </span>
-                <span className="postDate">{post.date}</span>
-            </div>
-            <div className="postTopRight">
-                {/* <MoreVert /> */}
-            </div>
-        </div>
-        <div className="postCenter">
-          <span className="postText">{post.desc}</span>
-          <img className='postImg' src={post.photo} alt="" />
-        </div>
-        <div className="postBottom">
-          <div className="postBottomLeft">
-            <img className='likeIcon' src="/assets/like.png" onClick={likeHandler} alt="" />
-            <img className='likeIcon' src="/assets/heart.png" onClick={likeHandler} alt="" />
-            <span className="postLikeCounter">{like} people like it</span>
-          </div>
-          <div className="postBottomRight">
-            <span className="postCommenttext">{post.comment} comments</span>
-          </div>
-        </div>
+import NavBar from "../components/NavBar"
+import Button from '@material-ui/core/Button';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
+import IconButton from '@material-ui/core/IconButton';
+import '../styles/post.css';
+export default function Post() {
+  return <>
+  <div className="post">
+    <h3>Create New Post</h3> 
+    <h3>Upload video or image</h3> <br />
+  </div>
+  <div>
+  <input
+        type="file"
+        accept="image/*"
+        style={{ display: 'none' }}
+        id="contained-button-file"
+  />
+      <label htmlFor="contained-button-file">
+        <Button variant="contained" color="primary" component="span">
+          Upload
+        </Button>
+      </label>
+      <h3>  OR  </h3>
+      <input accept="image/*" id="icon-button-file"
+        type="file" style={{ display: 'none' }} />
+      <label htmlFor="icon-button-file">
+        <IconButton color="primary" aria-label="upload picture"
+        component="span">
+          <PhotoCamera />
+        </IconButton>
+      </label>
       </div>
-    </div>
-  )
+
+    </>
+  ;
 }
+
+
+// import {MoreVert} from "@mui/icons-material"
+// 

@@ -8,7 +8,7 @@ return <>
     <nav className="nav">
     <img 
             align-items="center"
-            src="imgs/TravelLogo.png"
+            src="imgs/Passion4Travel.png"
             alt="Logo" 
             style={{ width: "40px"}}/>
     <Link to ='/'>Home</Link> <n/>

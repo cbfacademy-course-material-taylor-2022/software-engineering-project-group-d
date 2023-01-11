@@ -26,7 +26,8 @@ export default function ProfilePage(){
                     </div>
                 </div>
             <div className="post">
-            Here I will have to link to the data containing
+            {/* Here I will have to link to the data containing */}
+            <p>Create a Post</p>
             </div>
         </div>
     </div>
