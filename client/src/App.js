@@ -11,51 +11,51 @@ import UserHome from "./pages/UserHome";
 import ProfilePage from "./pages/profilePage";
 
 // SERVICES THAT CALL OUR API ENDPOINTS
-import { getAllProfiles } from "./services/profileService";
+import { getAllUsers } from "./services/userService";
 
 function App() {
-  const [profiles, setProfiles] = useState(null);
+  // const [users, setUsers] = useState(null);
 
-  useEffect(() => {
-    async function getProfiles() {
-      if (!profiles) {
-        const response = await getAllProfiles();
-        setProfiles(response);
-      }
-    }
+  // useEffect(() => {
+  //   async function getUsers() {
+  //     if (!user) {
+  //       const response = await getAllUsers();
+  //       setUsers(response);
+  //     }
+  //   }
 
-    getProfiles();
-  }, [profiles]);
+  //   getUsers();
+  // }, [users]);
 
-  const renderProfile = (user) => {
-    return (
-      <li key={user._id}>
-        <h3>
-          {`${user.first_name} 
-          ${user.last_name}`}
-        </h3>
-        <p>{user.location}</p>
-      </li>
-    );
-  };
+  // const renderProfile = (user) => {
+  //   return (
+  //     <li key={user._id}>
+  //       <h3>
+  //         {`${user.first_name} 
+  //         ${user.last_name}`}
+  //       </h3>
+  //       <p>{user.location}</p>
+  //     </li>
+  //   );
+  // };
 
   return (
     <div>
-      <ul>
+      {/* <ul>
         {profiles && profiles.length > 0 ? (
           profiles.map((profile) => renderProfile(profile))
-        ) : (
-          //<p>No profiles found</p>
+        ) : ( */}
+        
           <BrowserRouter>
-          <Route exact path="/" render={() =>(<UserHome/>)}/>
+          <Route exact path="/" render={() =>(<Homepage/>)}/>
           <Route exact path="/about" render={() =>(<About/>)} />
           <Route exact path="/signin" render={() =>(<SignIn/>)} />
           <Route exact path="/register" render={() =>(<Register/>)} />
           <Route exact path="/profile" render={() =>(<ProfilePage/>)} />
           <Route exact path="/editProfile" render={() =>(<EditProfile/>)} />
       </BrowserRouter>
-        )}
-      </ul>
+        {/* )}
+      </ul> */}
     </div>
   );
 }
