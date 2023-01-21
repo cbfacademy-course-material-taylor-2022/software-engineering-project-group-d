@@ -20,10 +20,10 @@ mongoose.connect(process.env.DATABASE_CONNECTION_STRING, {
 });
 
 app.use(bodyParser.json());
+// app.post("/signin",)
 
 // IMPORT YOUR API ROUTES HERE
-// Below is just an example. Don't forget to delete it. 
-// It's importing and using everything from the profilesRoutes.js file and also passing app as a parameter for profileRoutes to use
+
 require("./routes/usersRoutes")(app); 
 
 const PORT = process.env.PORT;

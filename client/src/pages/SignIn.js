@@ -2,6 +2,33 @@
 //https://github.com/the-debug-arena/login-registration/blob/main/src/components/signup_component.js
 
 import React, { Component } from "react";
+// import { getAllUsers } from "./services/userService";
+
+// const [users, setUsers] = useState(null);
+
+  // useEffect(() => {
+  //   async function getUsers() {
+  //     if (!user) {
+  //       const response = await getAllUsers();
+  //       setUsers(response);
+  //     }
+  //   }
+
+  //   getUsers();
+  // }, [users]);
+
+  // const renderProfile = (user) => {
+  //   return (
+  //     <li key={user._id}>
+  //       <h3>
+  //         {`${user.first_name} 
+  //         ${user.last_name}`}
+  //       </h3>
+  //       <p>{user.location}</p>
+  //     </li>
+  //   );
+  // };
+
 
 export default class SignIn extends Component {
   constructor(props) {
@@ -16,7 +43,7 @@ export default class SignIn extends Component {
     e.preventDefault();
     const { email, password } = this.state;
     console.log(email, password);
-    fetch("http://localhost:8080/api/user", {
+    fetch("http://localhost:8080/api/users", {
       method: "POST",
       crossDomain: true,
       headers: {
