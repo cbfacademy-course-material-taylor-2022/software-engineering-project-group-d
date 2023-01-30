@@ -2,11 +2,12 @@ const mongoose = require("mongoose");
 const User = mongoose.model("users");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const { protect } = require('../middleware/authMiddleware')
 
 
 const userRoutes = (app) => {
 //    //this is for registering new user info to mongodb: 
-  app.post(`/api/register`,async (req,res) =>{
+  app.post(`/api/register`, async (req,res) =>{
     const {first_name, last_name, email, password} = req.body
 
 //- first I throw an error if all fields are not filled
@@ -38,6 +39,7 @@ const userRoutes = (app) => {
         _id: user.id,
         first_name: user.first_name,
         email: user.email,
+        token: generateToken(user._id),
       })
     }else {
       res.status(400)
@@ -45,76 +47,45 @@ const userRoutes = (app) => {
     }
     console.log(req.body)
   })
+
 //auth new user
+app.post(`/api/user/auth`,async (req,res) =>{
+  const { email, password } = req.body
 
-// const registerUser = await User.findOne({ email })
+// Check for user email
+  const user = await User.findOne({email})
+//because the password the user will be entering is not encrypted 'bcrypt compare is used'
+  if (user && (await bcrypt.compare(password, user.password))) {
+    res.json({
+      _id: user.id,
+      first_name: user.first_name,
+      email: user.email,
+      token: generateToken(user._id),
+    })
+  } else {
+    res.status(400)
+    throw new Error('Invalid credentials'),
+    console.log(req.body, "Invalid credentials")
+  }
 
-//   if (user && (await bcrypt.compare(password, user.password))) {
-//     res.json({
-//       _id: user.id,
-//       name: user.name,
-//       email: user.email,
-//       token: generateToken(user._id),
-//     })
-//   } else {
-//     res.status(400)
-//     throw new Error('Invalid credentials')
-//   }
+})
+  // @desc    Get user data
+  // @route   GET /api/users/me
+  // @access  Private
 
-  //This is for signing in:
-  app.post(`/api/signin`, async (req, res) => {
-    const users = await User.find();
-//consider JWT auth tokens
-//this is checking for email and password and making sure they match the input
-    console.log(users);
-    const {email, password} = req.body;
-
-    const loggedin = users.filter((user) => {
-     return user.email == email && user.password == password; 
-    }).length >0
-    
-    return res.status(201).send({
-      error: false,
-      validuser: loggedin,
-      // user,
-    });
+  app.get(`/api/user/me`,async (req,res) =>{
+    const getMe = async (req, res) => {
+      res.status(200).json(req.user)
+    }
   })
-  // app.get(`/api/user`, async (req, res) => {
-  //   const users = await User.find();
+    
 
-  //   return res.status(200).send(users);
-  // });
-
-  // app.post(`/api/user`, async (req, res) => {
-  //   const user = await User.create(req.body);
-
-  //   return res.status(201).send({
-  //     error: false,
-  //     user,
-  //   });
-  // });
-
-  // app.put(`/api/user/:id`, async (req, res) => {
-  //   const { id } = req.params;
-
-  //   const user = await User.findByIdAndUpdate(id, req.body);
-
-  //   return res.status(202).send({
-  //     error: false,
-  //     user,
-  //   });
-  // });
-
-  // app.delete(`/api/user/:id`, async (req, res) => {
-  //   const { id } = req.params;
-
-  //   const user = await User.findByIdAndDelete(id);
-
-  //   return res.status(202).send({
-  //     error: false,
-  //     user,
-  //   });
-  // });
+  // Generate JWT
+    const generateToken = (id) => {
+      return jwt.sign({ id }, process.env.JWT_SECRET, {
+        expiresIn: '30d',
+      })
+    }
 };
 
 module.exports = userRoutes;
