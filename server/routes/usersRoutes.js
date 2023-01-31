@@ -73,10 +73,15 @@ app.post(`/api/user/auth`,async (req,res) =>{
   // @route   GET /api/users/me
   // @access  Private
 
-  app.get(`/api/user/me`,async (req,res) =>{
-    const getMe = async (req, res) => {
-      res.status(200).json(req.user)
-    }
+  app.get(`/api/user/me`,async (req,res,next) =>{
+    protect(req,res,next)
+    console.log(res.statusCode)
+    if (res.statusCode < 300){
+      res.send("Secure Login")
+     return res.status(200).json(req.user)
+      
+    } 
+    
   })
     
 
