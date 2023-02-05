@@ -70,7 +70,7 @@ app.post(`/api/user/auth`,async (req,res) =>{
 
 })
   // @desc    Get user data
-  // @route   GET /api/users/me
+  // @route   GET /api/user/me
   // @access  Private
 
   app.get(`/api/user/me`,async (req,res,next) =>{

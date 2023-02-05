@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require('cors');
 
 mongoose.connect("mongodb+srv://Passion4Travel:Passion4Travel@cluster0.c7skzpl.mongodb.net/Passion4Travel?retryWrites=true&w=majority");
 
@@ -20,6 +21,9 @@ mongoose.connect(process.env.DATABASE_CONNECTION_STRING, {
 });
 
 app.use(bodyParser.json());
+app.use(cors({
+  origin: '*'
+}));
 // app.post("/signin",)
 
 // IMPORT YOUR API ROUTES HERE
@@ -30,3 +34,13 @@ const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`API running on port ${PORT}`);
 });
+
+app.get('/cors', (req, res) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.send({ "msg": "This has CORS enabled 🎈" })
+  })
+
+
+
+
+

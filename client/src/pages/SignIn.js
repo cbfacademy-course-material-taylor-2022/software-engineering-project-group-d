@@ -1,83 +1,55 @@
 // The majority of this code was taken from:
 //https://github.com/the-debug-arena/login-registration/blob/main/src/components/signup_component.js
 
-import React, { Component } from "react";
-// import { getAllUsers } from "./services/userService";
+import React from "react"
+import { useState } from 'react'
+import { FaSignInAlt } from 'react-icons/fa'
 
-// const [users, setUsers] = useState(null);
+import { login, reset } from '../services/authSlice'
 
-  // useEffect(() => {
-  //   async function getUsers() {
-  //     if (!user) {
-  //       const response = await getAllUsers();
-  //       setUsers(response);
-  //     }
-  //   }
+export default function SignIn() {
 
-  //   getUsers();
-  // }, [users]);
+  const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
 
-  // const renderProfile = (user) => {
-  //   return (
-  //     <li key={user._id}>
-  //       <h3>
-  //         {`${user.first_name} 
-  //         ${user.last_name}`}
-  //       </h3>
-  //       <p>{user.location}</p>
-  //     </li>
-  //   );
-  // };
+  async function loginUser(event) {
+		event.preventDefault()
 
+	const response = await fetch('http://localhost:8080/api/user/auth', 
+    {
+      mode:'cors',
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				email,
+				password,
+			}),
+		})
+    const data = await response.json()
 
-export default class SignIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
+		if (data.user) {
+			localStorage.setItem('token', data.user)
+			alert('Login successful')
+			window.location.href = '/user'
+		} else {
+			alert('Please check your username and password')
+		}
   }
-  handleSubmit(e) {
-    e.preventDefault();
-    const { email, password } = this.state;
-    console.log(email, password);
-    fetch("http://localhost:8080/api/users", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, "userRegister");
-        if (data.status === "ok") {
-          alert("login successful");
-          window.localStorage.setItem("token", data.data);
-          window.location.href = "./userDetails";
-        }
-      });
-  }
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <h3>Sign In</h3>
+  return (
+    <>
+      <form onSubmit={loginUser} >
+        <h3><FaSignInAlt/>Sign In</h3>
 
         <div className="mb-3">
           <label>Email address</label>
           <input
             type="email"
+            value={email}
             className="form-control"
             placeholder="Enter email"
-            onChange={(e) => this.setState({ email: e.target.value })}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -85,9 +57,10 @@ export default class SignIn extends Component {
           <label>Password</label>
           <input
             type="password"
+            value={password}
             className="form-control"
             placeholder="Enter password"
-            onChange={(e) => this.setState({ password: e.target.value })}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
@@ -113,6 +86,7 @@ export default class SignIn extends Component {
           <a href="/sign-up">Sign Up</a>
         </p>
       </form>
+    </>   
     );
   }
-}
+

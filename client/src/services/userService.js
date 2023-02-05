@@ -2,11 +2,19 @@
 // This example fetch is specifically for our Profile API and is why the file is called profileService.js
 import axios from "axios";
 
-const getAllUsers = async () => {
-  const response = await axios.get(`/api/user`);
+const API_URL = '/api/register'
 
-  return response.data || [];
+//register user
+const register = async (userData) => {
+  const response = await axios.post(API_URL, userData)
+
+  if (response.data) {
+    localStorage.setItem('user', JSON.stringify(response.data))
+  }
+
+  return response.data
 };
 
 // All of the endpoints in this file can be exported below
-export { getAllUsers };
+const userService = { register}
+export default userService;
