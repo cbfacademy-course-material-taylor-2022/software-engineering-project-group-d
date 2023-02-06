@@ -11,7 +11,7 @@ import NavBar from '../components/NavBar'
 import {useNavigate} from 'react-router-dom'
 
 
-export default function Register({user}) {
+export default function Register() {
 
 	const [first_name, setFirstName] = useState('')
   const [last_name, setLastName] = useState('')
@@ -29,7 +29,6 @@ export default function Register({user}) {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-      redirect: 'follow'
 			},
 			body: JSON.stringify({
 				first_name,
@@ -41,9 +40,9 @@ export default function Register({user}) {
 
 		const data = await response.json()
 
-		if (data.status === 'ok') {
-			user({ password: password, email: email })
-			navigate("/user", { replace: true })
+		if (data.status <400) {
+			alert('Login successful')
+			navigate("/user")
 		}
 	}
     return (

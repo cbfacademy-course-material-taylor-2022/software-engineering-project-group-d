@@ -14,14 +14,14 @@ const userRoutes = (app) => {
 //- first I throw an error if all fields are not filled
     if (!first_name || !last_name || !email || !password){
       res.status(400)
-      throw new Error('Please add all fields')
+      alert('Please add all fields')
     }
 
 //check if user exists by email
     const userExists = await User.findOne({email})
     if (userExists){
+      alert('User already exists')
       res.status(400)
-      throw new Error("User already exists"),
       console.log(req.body, "User already exists")
     }
 //hash password
@@ -43,8 +43,9 @@ const userRoutes = (app) => {
         token: generateToken(user._id),
       })
     }else {
+      alert("Invalid user data")
       res.status(400)
-      throw new Error("Invalid user data")
+      
     }
     console.log(req.body)
   })

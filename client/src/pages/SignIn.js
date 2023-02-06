@@ -3,8 +3,11 @@
 
 import React from "react"
 import { useState } from 'react'
+import bcrypt from 'bcryptjs'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom"
+import NavBar from "../components/NavBar"
+import "../styles/homepage.css"
 
 
 export default function SignIn() {
@@ -12,6 +15,7 @@ export default function SignIn() {
   const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
   const navigate = useNavigate()
+  
   
 
   async function loginUser(event) {
@@ -30,11 +34,13 @@ export default function SignIn() {
 			}),
 		})
     const data = await response.json()
+    const salt = await bcrypt.genSalt(10)
+    const hashedPassword = bcrypt.hashSync(password, '$2a$10$CwTycUXWue0Thq9StjUM0u')
 
-		if (data.user) {
-			localStorage.setItem('token', data.user)
+		if (data.email === email && bcrypt.compare(password, data.password)) {
+			
 			alert('Login successful')
-      navigate("/user");
+      navigate("/user")
      
 		} else {
 			alert('Please check your username and password')
@@ -42,9 +48,14 @@ export default function SignIn() {
   }
   return (
     <>
+    <div className="centered">
+    <container>
+      <NavBar/>
+      <h3><FaSignInAlt/>Sign In</h3>
+    </container>
+    
       <form onSubmit={loginUser} >
-        <h3><FaSignInAlt/>Sign In</h3>
-
+      
         <div className="mb-3">
           <label>Email address</label>
           <input
@@ -86,9 +97,10 @@ export default function SignIn() {
           </button>
         </div>
         <p className="forgot-password text-right">
-          <a href="/sign-up">Sign Up</a>
+          <a href="/register">Sign Up</a>
         </p>
       </form>
+      </div>
     </>   
     );
   }
