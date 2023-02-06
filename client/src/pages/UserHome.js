@@ -6,18 +6,17 @@ import MenuToolbar from "../components/MenuToolbar";
 import Feed from "../components/feed";
 import '../styles/home.css'
 
-export default function UserHome (){
-  
+export default function UserHome(){
     return <>
     <div >
-      <h1 >User HomePage</h1>
-      <NavBar/>
-      <MenuToolbar/>
-      <div className="homeContainer">
-        <Feed/>
+    <h1 >User HomePage</h1>
+    <NavBar/>
+    <MenuToolbar/>
+     <div className="homeContainer">
+     <Feed/>
        
             
-      </div>
+       </div>
     </div>
    
 
