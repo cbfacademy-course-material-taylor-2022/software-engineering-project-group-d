@@ -16,11 +16,11 @@ export default function Sidebar() {
                 
                 <img  src="imgs/profile/Flo.jpg" 
                       alt="profile img" 
-                      className="sidebarItem"
-                      style={{width: 100, height: 100, borderRadius: 100/ 2}} 
-                />
+                      className="profileImg"
+                      style={{width: 90, height: 90, borderRadius: 100/ 2}} 
+                /> <br/><br/>
                
-                    <Link to ='/profile'><button className="sidebarButton">
+                    <Link to ='/profile'><button1 className="sidebarButton">
                             <li className="sidebarListItem">
                                     {/* <RssFeed className='sidebarIcon'/> */}
                                     <img 
@@ -30,7 +30,8 @@ export default function Sidebar() {
                                     style={{ width: "40px"}}/>
                                     <span className="sidebarListItemText">Profile</span>
                             </li>
-                        </button></Link>  <br/><br/>
+                        </button1></Link>  <br/><br/>
+                    <Link to ='/search'><button1 className="sidebarButton">
                     <li className="sidebarListItem">
                         {/* <Chat className='sidebarIcon'/> */}
                         <img 
@@ -40,6 +41,8 @@ export default function Sidebar() {
                          style={{ width: "40px"}}/>
                         <span className="sidebarListItemText">Search</span>
                     </li>
+                    </button1></Link> <br/><br/>
+                    <Link to ='/create'><button1 className="sidebarButton">
                     <li className="sidebarListItem">
                         {/* <PlayCircleFilledOutlined className='sidebarIcon'/> */}
                         <img 
@@ -48,8 +51,8 @@ export default function Sidebar() {
                          alt="Logo" 
                          style={{ width: "40px"}}/>
                         <span className="sidebarListItemText">Create</span>
-                    </li>
-                 
+                    </li> </button1></Link>
+                    
                 </ul>
                 
                 <hr className='sidebarHr'/>

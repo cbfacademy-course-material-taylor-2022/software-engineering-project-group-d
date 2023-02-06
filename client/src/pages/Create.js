@@ -1,13 +1,12 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-// import Logo from "../components/Logo";
+
 import NavBar from "../components/NavBar";
 import MenuToolbar from "../components/MenuToolbar";
-import Feed from "../components/feed";
 import '../styles/profile.css'
 
 
-export default function ProfilePage(){
+export default function Create(){
     return <>
     <div >
         <NavBar/>
@@ -17,16 +16,24 @@ export default function ProfilePage(){
             <div className="editProfile">
                 <div className="postWrapper">
                     <div className="editProfileText">
-                        <h5>Username</h5>
-                        <p>Saved user bio info</p>
+                        <h5>Upload Post</h5>
+                        <p>Drag your media here or upload file</p>
                         <ul><Link to ='/editProfile'>
-                            <button className="editProfileButton">Edit Profile</button>
+                            <button className="editProfileButton">Browse for file</button>
                             </Link></ul>
                         </div>
                     </div>
                 </div>
             <div className="editProfile">
-            Here I will have to link to the data containing
+            <div className="postWrapper">
+                    <div className="editProfileText">
+                        <h5>Write caption</h5>
+                        <p>Drag your media here or upload file</p>
+                        <ul><Link to ='/editProfile'>
+                            <button className="editProfileButton">Browse for file</button>
+                            </Link></ul>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>

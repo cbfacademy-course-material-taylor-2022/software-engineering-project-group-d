@@ -10,11 +10,15 @@ import "../styles/homepage.css"
 export default function Homepage(){
     return <>
     
-    <div className="centered">
+    <div >
     <container>
         <NavBar/>
-    </container>
+       
+    </container >
+    <div className="centered">
         <Logo/>
+    </div>
+       
     <ul>
         <Link to ='/signin'><button className="btn-grad1">Sign In</button></Link>  <br/><br/>
         <Link to ='/register'><button className="btn-grad">Register</button></Link>

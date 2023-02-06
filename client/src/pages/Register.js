@@ -4,6 +4,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaUser } from 'react-icons/fa'
 import NavBar from '../components/NavBar'
+import "../styles/auth.css"
 import {useNavigate} from 'react-router-dom'
 
 

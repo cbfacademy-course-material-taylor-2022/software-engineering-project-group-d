@@ -51,11 +51,12 @@ export const Users = [
     },
   ];
 
+ 
   export const Posts = [
     {
       id: 1,
-      desc: "Quick Trip to Tarshish",
-      photo: "imgs/profile/Flo.jpg",
+      desc: "Views",
+      photo: "imgs/views.jpg",
       date: "5 mins ago",
       userId: 1,
       like: 32,

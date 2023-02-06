@@ -5,19 +5,33 @@ import NavBar from "../components/NavBar";
 import MenuToolbar from "../components/MenuToolbar";
 import Feed from "../components/feed";
 import '../styles/home.css'
+import '../styles/profile.css'
+import '../styles/menuToolbar.css'
 
 export default function UserHome (){
   
     return <>
-    <div >
-    <h1 >User HomePage</h1>
-    <NavBar/>
-    <MenuToolbar/>
-     <div className="homeContainer">
-     <Feed/>
+      <div className="homeContainer">
+        
+        <div>
+        <NavBar/>
+        </div>
+        <MenuToolbar/>
+        <div> 
+        <div className="sidebarWrapper">
+        <ul className="sidebarList">
+           <Feed/>
+           </ul>
+           </div> 
+        </div>
+  
+    
+    
+  
+   
+   
+
        
-            
-       </div>
     </div>
    
 

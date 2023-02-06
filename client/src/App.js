@@ -10,6 +10,8 @@ import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
 import UserHome from "./pages/UserHome";
 import ProfilePage from "./pages/profilePage";
+import Search from "./pages/Search";
+import Create from "./pages/Create";
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllUsers } from "./services/userService";
@@ -28,7 +30,9 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/search" element={<Search/>} />
           <Route path="/profile" element={<ProfilePage/>} />
+          <Route path="/create" element={<Create/>} />
           <Route path="/editProfile" element={<EditProfile/>}/>
         </Routes>
       </BrowserRouter>
