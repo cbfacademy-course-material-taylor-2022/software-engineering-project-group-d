@@ -1,4 +1,5 @@
-# MERN Stack Project
+# Travel4Passion MERN Social Media Project
+
 
 Here's some boilerplate code with the initial setup for your project.
 
