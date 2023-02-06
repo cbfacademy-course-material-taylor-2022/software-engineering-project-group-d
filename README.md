@@ -50,12 +50,12 @@ A MERN stack based project on social media application that enable user share th
 **When** I click on the create button
 **Then** I should see the ‘create’ page
 
-2. Menu HomePage
+### 2. Menu HomePage
 
 Narrative:
-**As a** unregistered user through a web browser 
-**I want** to be able to register
-**So that** I can navigate as a registered user through the travel app
+- **As a** unregistered user through a web browser 
+- **I want** to be able to register
+- **So that** I can navigate as a registered user through the travel app
 
 **Acceptance Criteria: (Presented as scenarios below)**
 
@@ -77,20 +77,17 @@ Narrative:
 **When** I click on the about link
 **Then** I should see the information about the application on my screen
 
-**Scenario 3:** Closing the About link
+**Scenario 4:** Closing the About link
 **Given** I can see the information about the app
 **When** I click on the close button
 **Then** I should see the original Menu HomePage
-
-
-
   
-3. Registration
+### 3. Registration
 
 Narrative:
-**As a** unregistered user through a web browser 
-**I want** to be able to register
-**So that** I can navigate as a registered user through the travel app
+- **As a** unregistered user through a web browser 
+- **I want** to be able to register
+- **So that** I can navigate as a registered user through the travel app
 
 **Acceptance Criteria: (Presented as scenarios below)**
 
@@ -108,12 +105,12 @@ Narrative:
 
 
 
-4. Create a New Post
+### 4. Create a New Post
 
 Narrative:
-**Whilst logged in to** my user profile 
-**I want** to be able to create a new post
-**So that** I can share my travel experiences on the the travel app
+- **Whilst logged in to** my user profile 
+- **I want** to be able to create a new post
+- **So that** I can share my travel experiences on the the travel app
 
 **Acceptance Criteria: (Presented as scenarios below)**
 
@@ -127,30 +124,30 @@ Narrative:
 **Given** that I am in a pop up window
 **When** I click on the submit button
 **Then** I should see a message to confirm if the post is to be created now or scheduled for another time..
-**Scenario 2 :**Create a New Post Button
+
+**Scenario 3 :**Create a New Post Button
 **Given** that I have created a new post
 **When** I click on the submit button
 **Then** I should see a message to confirm if the post is to be created now or scheduled for another time..
 
-
-**Scenario 3 :**Create a New Post Button
+**Scenario 4 :**Create a New Post Button
 **Given** that I have created a new post
 **When** I click on the create now button
 **Then** I should see a new post has been created..
 
-**Scenario 4 :**Create a New Post Button
+**Scenario 5 :**Create a New Post Button
 **Given** that I have created a new post
 **When** I click on the schedule later button
 **Then** I should receive a message that the post has been scheduled with the date and time...
 
 
 
-5. User Sign in Page
+### 5. User Sign in Page
 
 Narrative:
-**Whilst logged into** my user profile 
-**I want** to be able to view my user page 
-**So that** I can update my travel experiences on the travel app
+- **Whilst logged into** my user profile 
+- **I want** to be able to view my user page 
+- **So that** I can update my travel experiences on the travel app
 
 **Acceptance Criteria: (Presented as scenarios below)**
 
@@ -158,7 +155,6 @@ Narrative:
 **Given** that I am on my profile Page
 **When** I click on the update button
 **Then** I should see a new window pop up to update the new feed.
-
 
 **Scenario 2 :**forgot password
 **Given** that I signed on to my page
@@ -189,6 +185,11 @@ Narrative:
 **Given** that I have access the sign out page
 **When** I click on the sign out button
 **Then** I should receive a message ‘thank you for visiting Passion4Travel app…’
+
+
+## Wireframes
+
+
 
 
 
