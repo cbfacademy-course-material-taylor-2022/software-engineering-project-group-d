@@ -1,9 +1,6 @@
 # Travel4Passion MERN Social Media Project
 
-
-Here's some boilerplate code with the initial setup for your project.
-
-The expectation with this code is that you're able to clone the repository and get started building your own fullstack ([MERN](https://www.mongodb.com/mern-stack)) application.
+A MERN stack based project on social media application that enable user share their travel experience. It also enable users connect to friends, family and network with other friends of similar travel experience.  It is a responsive application with React at the frontend and MongoDB,  Express,  Node.Js at the backend. 
 
 - [Project Structure](#project-structure)
   - [Client](#client)
