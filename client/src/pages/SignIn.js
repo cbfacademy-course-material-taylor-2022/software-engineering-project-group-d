@@ -4,13 +4,15 @@
 import React from "react"
 import { useState } from 'react'
 import { FaSignInAlt } from 'react-icons/fa'
+import { useNavigate } from "react-router-dom"
 
-import { login, reset } from '../services/authSlice'
 
 export default function SignIn() {
 
   const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+  
 
   async function loginUser(event) {
 		event.preventDefault()
@@ -32,7 +34,8 @@ export default function SignIn() {
 		if (data.user) {
 			localStorage.setItem('token', data.user)
 			alert('Login successful')
-			window.location.href = '/user'
+      navigate("/user");
+     
 		} else {
 			alert('Please check your username and password')
 		}

@@ -1,9 +1,7 @@
-// import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import {ToastContainer} from "react-toastify";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Routes, useHistory } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-// import {register, reset} from "./services/authSlice";
 
 import Homepage from "./pages/Homepage"
 import About from "./pages/About"
@@ -17,20 +15,25 @@ import ProfilePage from "./pages/profilePage";
 import { getAllUsers } from "./services/userService";
 
 function App() {
+
+  
+  
   return (
   <>
     <div>
       <BrowserRouter>
-          <Route exact path="/" render={() =>(<Homepage/>)}/>
-          <Route exact path="/user" render={() =>(<UserHome/>)}/>
-          <Route exact path="/about" render={() =>(<About/>)} />
-          <Route exact path="/signin" render={() =>(<SignIn/>)} />
-          <Route exact path="/register" render={() =>(<Register/>)} />
-          <Route exact path="/profile" render={() =>(<ProfilePage/>)} />
-          <Route exact path="/editProfile" render={() =>(<EditProfile/>)} />
+        <Routes>
+          <Route path="/" element={<Homepage/>}/>
+          <Route path="/user" element={<UserHome/> } />
+          <Route path="/about" element={<About/>} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/profile" element={<ProfilePage/>} />
+          <Route path="/editProfile" element={<EditProfile/>}/>
+        </Routes>
       </BrowserRouter>
     </div>
-    {/* <ToastContainer/> */}
+    
   </>
   );
 }

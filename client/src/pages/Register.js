@@ -3,81 +3,24 @@
 
 import React, { useState, useEffect } from 'react'
 // import { useSelector, useDispatch } from 'react-redux'
-// import { Redirect } from 'react-router-dom'
 // import { toast } from 'react-toastify'
 // import { register, reset } from '../services/authSlice'
 import { FaUser } from 'react-icons/fa'
 import NavBar from '../components/NavBar'
 // import Spinner from '../components/Spinner'
-import { useHistory } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
-export default function Register() {
-  // const [formData, setFormData] = useState({
-  //   first_name: '',
-  //   last_name: '',
-  //   email: '',
-  //   password: '',
-  //   password2: '',
-  // })
 
-  // const { first_name, last_name, email, password, password2 } = formData
-
-  // const redirect = Redirect()
-  // const dispatch = useDispatch()
-
-  // const { user, isLoading, isError, isSuccess, message } = useSelector(
-  //   (state) => state.auth
-  // )
-
-  // useEffect(() => {
-  //   if (isError) {
-  //     Redirect('/')
-  //   }
-
-  //   if (isSuccess || user) {
-  //     Redirect('/user')
-  //   }
-
-  //   dispatch(reset())
-  // }, [user, isError, isSuccess, message, redirect, dispatch])
-
-  // const onSubmit = (e) => {
-  //   e.preventDefault()
-
-  //   if (password !== password2) {
-  //     toast.error('Passwords do not match')
-  //   } else {
-  //     const userData = {
-  //       first_name,
-  //       last_name,
-  //       email,
-  //       password,
-  //     }
-
-  //     dispatch(register(userData))
-  //   }
-  // }
-
-  // const onChange = (e) => {
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [e.target.name]: e.target.value,
-  //   }))
-  // }
-
- 
-
-  // if (isLoading) {
-  //   return <Spinner />
-  // }
-
-  const history = useHistory()
+export default function Register({user}) {
 
 	const [first_name, setFirstName] = useState('')
   const [last_name, setLastName] = useState('')
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
   const [password2, setPassword2] = useState('')
+  
+
+  const navigate = useNavigate();
 
 	async function registerUser(event) {
 		event.preventDefault()
@@ -86,6 +29,7 @@ export default function Register() {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+      redirect: 'follow'
 			},
 			body: JSON.stringify({
 				first_name,
@@ -98,11 +42,10 @@ export default function Register() {
 		const data = await response.json()
 
 		if (data.status === 'ok') {
-			history.push('/login')
+			user({ password: password, email: email })
+			navigate("/user", { replace: true })
 		}
 	}
-
-
     return (
         <>
         <container>

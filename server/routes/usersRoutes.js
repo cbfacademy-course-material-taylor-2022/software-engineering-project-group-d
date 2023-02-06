@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const { protect } = require('../middleware/authMiddleware')
 
 
+
 const userRoutes = (app) => {
 //    //this is for registering new user info to mongodb: 
   app.post(`/api/register`, async (req,res) =>{
@@ -61,10 +62,11 @@ app.post(`/api/user/auth`,async (req,res) =>{
       first_name: user.first_name,
       email: user.email,
       token: generateToken(user._id),
-    })
+    },
+  
+    )
   } else {
     res.status(400)
-    throw new Error('Invalid credentials'),
     console.log(req.body, "Invalid credentials")
   }
 
@@ -79,6 +81,7 @@ app.post(`/api/user/auth`,async (req,res) =>{
     if (res.statusCode < 300){
       res.send("Secure Login")
      return res.status(200).json(req.user)
+
       
     } 
     
