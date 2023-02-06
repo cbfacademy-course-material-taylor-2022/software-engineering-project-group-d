@@ -188,8 +188,7 @@ Narrative:
 
 
 ## Wireframes
-
-https://github.com/cbfacademy-course-material-taylor-2022/software-engineering-project-group-d/issues/2#issue-1573245072
-
+### Landing Page, SignIn and Register Page Wireframes
+https://user-images.githubusercontent.com/111147873/217079898-a94b201b-fb22-4afc-9909-44f409024f23.jpg
 
 
