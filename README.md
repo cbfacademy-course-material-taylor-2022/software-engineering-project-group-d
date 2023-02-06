@@ -13,101 +13,182 @@ A MERN stack based project on social media application that enable user share th
       - View all comments on a post
       - Deleting Comment
 - Messaging
-o	Realtime Messaging
-•	Search for users by name and location 
-•	Profile page shows user details and posts with following and followers menu.
-o	Follow / Unfollow Users if profile page
-•	Edit Profile
-o	Change profile picture
-o	Change email - password - name
-o	Add your own bio
-•	password is stored in database in encrypted format 
+    - Realtime Messaging
+- Search for users by name and location 
+- Profile page shows user details and posts with following and followers menu.
+    - Follow / Unfollow Users if profile page
+- Edit Profile
+    - Change profile picture
+    - Change email - password - name
+    - Add your own bio
+- Password is stored in database in encrypted format 
 
 
-The initial structure of the repository is:
+## Userstories
 
-```plain
-- README.md
-- client/
-  - public/
-  - src/
-    - services/
-    - index.js
-    - App.js
-  - README.md
-- server/
-  - data/
-  - models/
-  - routes/
-  - index.js
-  - README.md
-```
+1. Menu Toolbar
 
-### Client
+Narrative:
+**As a** user through a web browser 
+**I want** to be able to use the menu toolbar
+**So that** I can navigate to other pages on the travel app
 
-The client folder is where you will store your front end code. Currently this contains a new project created with `create-react-app` and an example of how to call an API that's in active development.
+**Acceptance Criteria: (Presented as scenarios below)**
 
-✋🏾 **Put your React code here** ✋🏾
+**Scenario 1:**Profile Button
+**Given** there is a menu toolbar with a profile button
+**When** I click on the profile button
+**Then** I should see my profile page
 
-Read the `client/` [README](./client/README.md) for more details of the example front end app provided
+**Scenario 2:**Search Button
+**Given** there is a menu toolbar with a search button
+**When** I click on the search button
+**Then** I should see the search page
 
-### Server
+**Scenario 3:**Create Button
+**Given** there is a menu toolbar with a create button
+**When** I click on the create button
+**Then** I should see the ‘create’ page
 
-The server folder is where you will store your backend code. You'll be building your API and making queries to your database here.
+2. Menu HomePage
 
-✋🏾 **Put your Node code here**✋🏾
+Narrative:
+**As a** unregistered user through a web browser 
+**I want** to be able to register
+**So that** I can navigate as a registered user through the travel app
 
-Read the `server/` [README](./server/README.md) for more details of the example API provided
+**Acceptance Criteria: (Presented as scenarios below)**
 
-## Getting Started
+**Scenario 1:**Register Button
+**Given** that I am on the Menu-HomePage
+**AND** there is a register button
+**When** I click on the register button
+**Then** I should see the Register Page
 
-### Environment variables
+**Scenario 2:**Sign in Button
+**Given** that I am on the Menu-HomePage
+**AND** there is a sign in button
+**When** I click on the sign in button
+**Then** I should see the sign in page
 
-We have provided you with an example environment variables file called [`.env.example`](./.env.example). Rename this file to `.env` to use it.
+**Scenario 3:**About link
+**Given** that I am on the Menu-HomePage
+**AND** there is an About link
+**When** I click on the about link
+**Then** I should see the information about the application on my screen
 
-In here you should assign your database connection string to the `DATABASE_CONNECTION_STRING` variable.
+**Scenario 3:** Closing the About link
+**Given** I can see the information about the app
+**When** I click on the close button
+**Then** I should see the original Menu HomePage
 
-Make sure your connection string has the correct database name you are trying to connect to and follows this format:
 
-```plain
-mongodb+srv://<username>:<password>@cluster0.7k5er.mongodb.net/<database_name>
-```
 
-For the example app the database name is `example_db`.
+  
+3. Registration
 
-You'll also see the `PORT` for your API in this file. Do not change this `PORT` number.
+Narrative:
+**As a** unregistered user through a web browser 
+**I want** to be able to register
+**So that** I can navigate as a registered user through the travel app
 
-🛑 **YOUR ENVIRONMENT VARIABLES SHOULD NEVER BE COMMITED AND THE `.env` FILE HAS ALREADY BEEN ADDED TO THE [`.gitignore`](./.gitignore).** 🛑
+**Acceptance Criteria: (Presented as scenarios below)**
 
-### Populating The Database
+**Scenario 1:**Register Button
+**Given** that I am on the Menu-HomePage
+**AND** there is a register button
+**When** I click on the register button
+**Then** I should see the RegistrationPage
 
-If you choose to populate your database with some initial data you can do so using seed data. We have provided an example of seed data in the [`data.example/`](./server/data.example) folder in a file called [`profiles.mongodb`](server/data.example/profiles.mongodb).
 
-All you need to do is rename the `data.example` folder to `data` and then create a `.mongodb` file that will create and insert data into your database and the correct collection(s).
+**Scenario 2:**Registration page
+**Given** that I have entered the requested details. 
+**When** I click on the submit button.
+**Then** I should receive a message confirming that I have been registered.
 
-To get the example app up and running you need to create an `example_db` database, a `profiles` collection and inserting some profile data. This can all be done by running the [`profiles.mongodb`](server/data.example/profiles.mongodb) file in your MongoDB playground.
 
-If successful you should see 4 documents in your newly created `profiles` collection, in your new `example_db` database.
 
-🛑 **YOU SHOULD NOT COMMIT YOUR INITIAL DATA. THE `data/`FOLDER HAS ALREADY BEEN ADDED TO THE [`.gitignore`](./.gitignore).** 🛑
+4. Create a New Post
 
-### Starting The Development Server
+Narrative:
+**Whilst logged in to** my user profile 
+**I want** to be able to create a new post
+**So that** I can share my travel experiences on the the travel app
 
-You can start the client side code (front-end) and server side (back-end) separately using the commands in their respective folders. If you prefer to start them all together (this is the most convienient way), you can do so with the following commands:
+**Acceptance Criteria: (Presented as scenarios below)**
 
-1. `npm run dev-install` to install all the dependencies
-2. `npm run develop` to start the development servers - [localhost:3000](http://localhost:3000) for front end and [localhost:8080](http://localhost:8080)
+**Scenario 1:**Create a New Post Button
+**Given** that I am on my profile Page
+**When** I click on the create a new post button
+**Then** I should see a new window pop up to add text and images.
 
-Please note that you will only need to run `npm run dev-install` once during your first installation, subsequently you will only need to run `npm run develop` to get your development environment up and running.
 
-When making file changes to either your front or back end code your app will automatically restart and reload for you.
+**Scenario 2 :**Create a New Post Button
+**Given** that I am in a pop up window
+**When** I click on the submit button
+**Then** I should see a message to confirm if the post is to be created now or scheduled for another time..
+**Scenario 2 :**Create a New Post Button
+**Given** that I have created a new post
+**When** I click on the submit button
+**Then** I should see a message to confirm if the post is to be created now or scheduled for another time..
 
-### Example Application
 
-We have created an example application that will display a list of profiles that are stored in the `example_db` database.
+**Scenario 3 :**Create a New Post Button
+**Given** that I have created a new post
+**When** I click on the create now button
+**Then** I should see a new post has been created..
 
-If all's well with the above steps, you should see a list of familiar names. If your browser shows "No profiles found", re-check all the steps to ensure your database is populated and everything is connected properly.
+**Scenario 4 :**Create a New Post Button
+**Given** that I have created a new post
+**When** I click on the schedule later button
+**Then** I should receive a message that the post has been scheduled with the date and time...
 
-## What's Next?!
 
-Now it's time to start building your project.
+
+5. User Sign in Page
+
+Narrative:
+**Whilst logged into** my user profile 
+**I want** to be able to view my user page 
+**So that** I can update my travel experiences on the travel app
+
+**Acceptance Criteria: (Presented as scenarios below)**
+
+**Scenario 1:** Edit to update user profile
+**Given** that I am on my profile Page
+**When** I click on the update button
+**Then** I should see a new window pop up to update the new feed.
+
+
+**Scenario 2 :**forgot password
+**Given** that I signed on to my page
+**When** I enter password to access my page twice error message popped up
+**Then** I should see a forgotten password option to change my old password..
+
+**Scenario 3 :**Change password
+**Given** that I have have forgotten my password
+**When** I click on the change password button or link
+**Then** I should see a message on the change password page confirming that I can change my password ..
+
+**Scenario 4 :**Create new password
+**Given** that I have created a new password
+**When** I click on the new password button
+**Then** I should be able to access my profile page...
+
+**Scenario 5 :**Sign in with username or Email
+**Given** that I have sign in with my username
+**When** I click on the sign in button 
+**Then** I should see my profile page...
+
+**Scenario 6 :**Sign in with Email
+**Given** that I have sign in with my email
+**When** I click on the sign in button 
+**Then** I should see my profile page…
+
+**Scenario 7 :**Sign out page with sign out button
+**Given** that I have access the sign out page
+**When** I click on the sign out button
+**Then** I should receive a message ‘thank you for visiting Passion4Travel app…’
+
+
+
