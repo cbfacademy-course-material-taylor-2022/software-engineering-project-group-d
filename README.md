@@ -189,6 +189,6 @@ Narrative:
 
 ## Wireframes
 ### Landing Page, SignIn and Register Page Wireframes
-https://user-images.githubusercontent.com/111147873/217079898-a94b201b-fb22-4afc-9909-44f409024f23.jpg
+![image](https://user-images.githubusercontent.com/111147873/217080705-e55c4133-1294-47f7-8ee1-6363eac5a6be.png)
 
 
