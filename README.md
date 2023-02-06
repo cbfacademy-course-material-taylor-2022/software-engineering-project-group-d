@@ -5,15 +5,24 @@ A MERN stack based project on social media application that enable user share th
 
 ## Features
 
+- Register and Login users
+    - Posts
+- Posts include text(caption) and image(s).
+    - Like posts
+    - Comment on posts
+      - View all comments on a post
+      - Deleting Comment
+- Messaging
+o	Realtime Messaging
+•	Search for users by name and location 
+•	Profile page shows user details and posts with following and followers menu.
+o	Follow / Unfollow Users if profile page
+•	Edit Profile
+o	Change profile picture
+o	Change email - password - name
+o	Add your own bio
+•	password is stored in database in encrypted format 
 
-- [Project Structure](#project-structure)
-  - [Client](#client)
-  - [Server](#server)
-- [Getting Started](#getting-started)
-  - [Populating The Database](#populating-the-database)
-  - [Starting The Development Server](#starting-the-development-server)
-  - [Example Application](#example-application)
-- [What's Next?!](#whats-next)
 
 The initial structure of the repository is:
 
