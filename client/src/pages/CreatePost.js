@@ -5,6 +5,5 @@ export default function CreatePost(){
     return <>
     <NavBar></NavBar>
     <Post/>
-
     </>
     };

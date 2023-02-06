@@ -3,6 +3,7 @@ import NavBar from "../components/NavBar"
 import Button from '@material-ui/core/Button';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import IconButton from '@material-ui/core/IconButton';
+// import { TextField } from "@mui/material";
 import '../styles/post.css';
 export default function Post() {
   return <>
@@ -31,6 +32,13 @@ export default function Post() {
           <PhotoCamera />
         </IconButton>
       </label>
+      {/* <TextField
+  id="first-name"
+  label="Name"
+  value={this.state.name}
+  onChange={this.handleChange('name')}
+  margin="normal"
+  /> */}
       </div>
 
     </>
@@ -38,5 +46,4 @@ export default function Post() {
 }
 
 
-// import {MoreVert} from "@mui/icons-material"
-// 
+ 
