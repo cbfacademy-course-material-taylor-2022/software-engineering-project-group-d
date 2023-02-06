@@ -25,7 +25,7 @@ export default function Post({ post }) {
                 <span className="postDate">{post.date}</span>
             </div>
             <div className="postTopRight">
-                {/* <MoreVert /> */}
+                
             </div>
         </div>
         <div className="postCenter">

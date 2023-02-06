@@ -10,14 +10,14 @@ export default function UserHome (){
   
     return <>
     <div >
-    <h1 >User HomePage</h1>
-    <NavBar/>
-    <MenuToolbar/>
-     <div className="homeContainer">
-     <Feed/>
+      <h1 >User HomePage</h1>
+      <NavBar/>
+      <MenuToolbar/>
+      <div className="homeContainer">
+        <Feed/>
        
             
-       </div>
+      </div>
     </div>
    
 
