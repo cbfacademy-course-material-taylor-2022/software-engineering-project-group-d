@@ -2,6 +2,10 @@
 
 A MERN stack based project on social media application that enable user share their travel experience. It also enable users connect to friends, family and network with other friends of similar travel experience.  It is a responsive application with React at the frontend and MongoDB,  Express,  Node.Js at the backend. 
 
+
+## Features
+
+
 - [Project Structure](#project-structure)
   - [Client](#client)
   - [Server](#server)
@@ -10,8 +14,6 @@ A MERN stack based project on social media application that enable user share th
   - [Starting The Development Server](#starting-the-development-server)
   - [Example Application](#example-application)
 - [What's Next?!](#whats-next)
-
-## Project Structure
 
 The initial structure of the repository is:
 
