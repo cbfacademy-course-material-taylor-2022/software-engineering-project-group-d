@@ -2,12 +2,8 @@
 //https://github.com/SinghDigamber/react-login-signup-ui-template/blob/master/src/components/signup.component.js
 
 import React, { useState, useEffect } from 'react'
-// import { useSelector, useDispatch } from 'react-redux'
-// import { toast } from 'react-toastify'
-// import { register, reset } from '../services/authSlice'
 import { FaUser } from 'react-icons/fa'
 import NavBar from '../components/NavBar'
-// import Spinner from '../components/Spinner'
 import {useNavigate} from 'react-router-dom'
 
 
@@ -26,7 +22,8 @@ export default function Register() {
 		event.preventDefault()
 
 		const response = await fetch('http://localhost:8080/api/register', {
-			method: 'POST',
+      mode:'cors',
+      method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
@@ -40,9 +37,12 @@ export default function Register() {
 
 		const data = await response.json()
 
-		if (data.status <400) {
+		if (data._id !== "") {
 			alert('Login successful')
 			navigate("/user")
+		}
+    else {
+			alert('error test')
 		}
 	}
     return (
