@@ -26,9 +26,9 @@ A MERN stack based project on social media application that enable user share th
 
 ## Userstories
 
-1. Menu Toolbar
+### 1. Menu Toolbar
 
-Narrative:
+#### Narrative:
 **As a** user through a web browser 
 **I want** to be able to use the menu toolbar
 **So that** I can navigate to other pages on the travel app
