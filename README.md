@@ -2,6 +2,8 @@
 
 A MERN stack based project on social media application that enable user share their travel experience. It also enable users connect to friends, family and network with other friends of similar travel experience.  It is a responsive application with React at the frontend and MongoDB,  Express,  Node.Js at the backend. 
 
+![Mockup](https://user-images.githubusercontent.com/111147873/217085256-ee23c42f-5bde-4a19-b9cf-71aa1673d587.png)
+
 
 ## Features
 
