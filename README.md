@@ -191,4 +191,12 @@ Narrative:
 ### Landing Page, SignIn and Register Page Wireframes
 ![image](https://user-images.githubusercontent.com/111147873/217080705-e55c4133-1294-47f7-8ee1-6363eac5a6be.png)
 
+![Wireframe - User HomePage](https://user-images.githubusercontent.com/111147873/217080934-ad06b787-9026-4fd7-b0f6-b2f6b625c82c.jpg)
+
+![Wireframe - Search](https://user-images.githubusercontent.com/111147873/217080930-0569af98-0f6e-482d-aacd-d7cccb9caccd.png)
+![Wireframe -Create](https://user-images.githubusercontent.com/111147873/217080938-cfcf5368-ff28-429a-829f-83040455e706.png)
+![Wireframe - Profile Page](https://user-images.githubusercontent.com/111147873/217080921-3cd509df-a2b3-4119-95e1-1cd209eaa932.png)
+![Wireframe -Edit Profile Page](https://user-images.githubusercontent.com/111147873/217080939-40ba0204-d3b7-49a5-8cd9-4f7b5a07ef16.png)
+
+
 
