@@ -206,5 +206,12 @@ Narrative:
 ### Edit Profile Wireframe
 ![Wireframe -Edit Profile Page](https://user-images.githubusercontent.com/111147873/217080939-40ba0204-d3b7-49a5-8cd9-4f7b5a07ef16.png)
 
+References:
+https://www.w3schools.com/react/react_usestate.asp
+Session Notes/ Recorded sessions
+
+Acknowledgement
+CBF TAs - Andrew, 
 
 
+Deployment: to be considered
