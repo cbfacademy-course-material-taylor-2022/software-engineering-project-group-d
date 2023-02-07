@@ -209,11 +209,11 @@ Narrative:
 ## 7. References:
 https://www.w3schools.com/react/react_usestate.asp
 
-Session Notes/ Recorded sessions
+## Session Notes/ Recorded sessions
 
 ## 8. Deployment: to be commission in the next Phase of the Project
 
 ## 9. Acknowledgement
 
-ALL TAs of CBF, Clare and Mariam
+## ALL TAs of CBF, Clare and Mariam
 
