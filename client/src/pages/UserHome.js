@@ -17,7 +17,7 @@ export default function UserHome (){
         <NavBar/>
         </div>
         <MenuToolbar/>
-        <div> 
+        <div id="scroll-container"> 
         <div className="sidebarWrapper">
         <ul className="sidebarList">
            <Feed/>

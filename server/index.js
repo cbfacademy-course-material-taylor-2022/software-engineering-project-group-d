@@ -9,6 +9,7 @@ mongoose.connect("mongodb+srv://Passion4Travel:Passion4Travel@cluster0.c7skzpl.m
 
 // IMPORT YOUR SCHEMAS HERE
 const UserModel = require("./models/Users");
+const ProfileModel = require("./models/Profiles")
 
 
 const app = express();
@@ -29,6 +30,7 @@ app.use(cors({
 // IMPORT YOUR API ROUTES HERE
 
 require("./routes/usersRoutes")(app); 
+require("./routes/profilesRoutes")(app); 
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

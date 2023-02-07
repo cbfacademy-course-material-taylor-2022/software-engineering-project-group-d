@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
+const Profile = mongoose.model("profiles")
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { protect } = require('../middleware/authMiddleware')
@@ -51,7 +52,7 @@ const userRoutes = (app) => {
   })
 
 //auth new user
-app.post(`/api/user/auth`,async (req,res,next) =>{
+app.post(`/api/user/auth`,async (req,res) =>{
   const { email, password } = req.body
 
 // Check for user email
@@ -88,6 +89,7 @@ app.post(`/api/user/auth`,async (req,res,next) =>{
     } 
     
   })
+
 
 
   // Generate JWT

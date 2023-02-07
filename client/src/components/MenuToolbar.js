@@ -20,7 +20,7 @@ export default function Sidebar() {
                       style={{width: 90, height: 90, borderRadius: 100/ 2}} 
                 /> <br/><br/>
                
-                    <Link to ='/profile'><button1 className="sidebarButton">
+                    <Link to ='/profile'><button className="sidebarButton">
                             <li className="sidebarListItem">
                                     {/* <RssFeed className='sidebarIcon'/> */}
                                     <img 
@@ -30,8 +30,8 @@ export default function Sidebar() {
                                     style={{ width: "40px"}}/>
                                     <span className="sidebarListItemText">Profile</span>
                             </li>
-                        </button1></Link>  <br/><br/>
-                    <Link to ='/search'><button1 className="sidebarButton">
+                        </button></Link>  <br/><br/>
+                    <Link to ='/search'><button className="sidebarButton">
                     <li className="sidebarListItem">
                         {/* <Chat className='sidebarIcon'/> */}
                         <img 
@@ -41,8 +41,8 @@ export default function Sidebar() {
                          style={{ width: "40px"}}/>
                         <span className="sidebarListItemText">Search</span>
                     </li>
-                    </button1></Link> <br/><br/>
-                    <Link to ='/create'><button1 className="sidebarButton">
+                    </button></Link> <br/><br/>
+                    <Link to ='/create'><button className="sidebarButton">
                     <li className="sidebarListItem">
                         {/* <PlayCircleFilledOutlined className='sidebarIcon'/> */}
                         <img 
@@ -51,7 +51,7 @@ export default function Sidebar() {
                          alt="Logo" 
                          style={{ width: "40px"}}/>
                         <span className="sidebarListItemText">Create</span>
-                    </li> </button1></Link>
+                    </li> </button></Link>
                     
                 </ul>
                 

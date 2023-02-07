@@ -41,6 +41,9 @@ export default function Register() {
 		if (data._id !== "") {
 			alert('Login successful')
 			navigate("/user")
+      localStorage.setItem('user', data.email)
+      console.log(email)
+      const { email } = data.email
 		}
     else {
 			alert('error test')

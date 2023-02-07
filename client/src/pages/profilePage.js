@@ -12,6 +12,7 @@ export default function ProfilePage(){
 
 
   const userName = localStorage.getItem('user');
+  const bioInfo = localStorage.getItem('bio')
  
 
     return <>
@@ -24,7 +25,7 @@ export default function ProfilePage(){
                 <div className="postWrapper">
                     <div className="editProfileText" >
                         <h5>{`Username: ${userName}`} </h5>
-                        <p>Saved user bio info</p>
+                        <p>{`Bio: ${bioInfo}`}</p>
                         <ul><Link to ='/editProfile'>
                             <button className="editProfileButton">Edit Profile</button>
                             </Link></ul>
