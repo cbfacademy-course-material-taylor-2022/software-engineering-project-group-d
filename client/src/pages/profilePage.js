@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import NavBar from "../components/NavBar";
 import MenuToolbar from "../components/MenuToolbar";
 import Feed from "../components/feed";
-import '../styles/post.css'
+import '../styles/profile.css'
 
 
 export default function ProfilePage(){
@@ -14,9 +14,9 @@ export default function ProfilePage(){
         <NavBar/>
         <MenuToolbar/>
         <div>
-            <div className="post">
+            <div className="editProfile">
                 <div className="postWrapper">
-                    <div className="postTop">
+                    <div className="editProfileText">
                         <h5>Username</h5>
                         <p>Saved user bio info</p>
                         <ul><Link to ='/editProfile'>

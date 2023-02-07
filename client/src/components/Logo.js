@@ -5,6 +5,8 @@ export default function Logo() {
         <img 
             src="imgs/Passion4Travel.png"
             alt="Logo" 
-            style={{ width: "400px"}}/>
+            position="sticky"
+            style={{ width: "600px"}}/>
+            
     </>
    }

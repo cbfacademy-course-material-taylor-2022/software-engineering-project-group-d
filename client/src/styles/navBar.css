@@ -2,6 +2,12 @@
     box-sizing: border-box;
     
   }
+
+  .logo-box {
+    background-color: #fcfcfc;
+    padding: 20px, 20px;
+    opacity: 0.9;
+  }
   
   body {
     margin: 0;
@@ -13,15 +19,14 @@
   }
   
   .nav {
-    position: sticky;
-    background-color: rgb(87, 86, 86);
+    position: fixed;
+    background-color: black;
     color: white;
     display: flex;
-    justify-content: space-between;
     align-items: right;
-    gap: 2rem;
+    gap: 1rem;
     padding: 0 1rem;
-    width: 95%;
+    width:100%;
     
     
   }
@@ -53,4 +58,7 @@
   
   .nav li:hover {
     background-color: #777;
+  }
+  .mask {
+    filter: drop-shadow(1 1 0.75rem rgb(243, 242, 239));
   }

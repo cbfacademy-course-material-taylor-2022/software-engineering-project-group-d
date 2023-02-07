@@ -40,6 +40,7 @@ export default function Sidebar() {
                          style={{ width: "40px"}}/>
                         <span className="sidebarListItemText">Search</span>
                     </li>
+                    <Link to ='/create'><button className="sidebarButton">
                     <li className="sidebarListItem">
                         {/* <PlayCircleFilledOutlined className='sidebarIcon'/> */}
                         <img 
@@ -49,9 +50,10 @@ export default function Sidebar() {
                          style={{ width: "40px"}}/>
                         <span className="sidebarListItemText">Create</span>
                     </li>
+                    </button></Link> 
                  
                 </ul>
-                <button className='sidebarButton'>Show More</button>
+                
                 <hr className='sidebarHr'/>
                 {/* <ul className="sidebarFriendList">
                     {Users.map(u=> (
