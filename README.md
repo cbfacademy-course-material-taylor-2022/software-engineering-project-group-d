@@ -211,16 +211,16 @@ https://www.w3schools.com/react/react_usestate.asp
 
 Session Notes/ Recorded sessions
 
-##**** KINNDLY NOTE ANY ADDITIONAL RESOURCE USED CAN BE ADDED HERE PLS*****
+##**** KINDLY NOTE | ANY ADDITIONAL RESOURCE USED CAN BE ADDED HERE PLS*****
 
 ## 8. Deployment: to be commission in the next Phase of the Project
 
 ## 9. Risk that might impact Travel4Passion MERN Social Media Project functionality
 Due to the contrain of time in light of AWS exam which gained upper priority later thus supercide plans to test some functionalilites. For example the twam are still working our how to navigate link to next page.
 Also...... 
-## *****HI TEAM YOUR CONTRIBUTION OF ISSUES EXPERIENCED IS NEEDED HERE PLS THANK YOU****
+##*****HI TEAM YOUR CONTRIBUTION OF ISSUES EXPERIENCED CAN BE ADDED HERE PLS THANK YOU****
 
-## 10 Plan to mitigate risk
+## 10 Plan to mitigate Risk
 Team planned to review the code of irresponsive functionalities with possibility to make change before depolyment in the next phase of the project
 
 ## 11. Acknowledgement
