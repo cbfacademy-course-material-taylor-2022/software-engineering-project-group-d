@@ -51,7 +51,7 @@ const userRoutes = (app) => {
   })
 
 //auth new user
-app.post(`/api/user/auth`,async (req,res) =>{
+app.post(`/api/user/auth`,async (req,res,next) =>{
   const { email, password } = req.body
 
 // Check for user email
@@ -64,6 +64,7 @@ app.post(`/api/user/auth`,async (req,res) =>{
       email: user.email,
       token: generateToken(user._id),
     },
+    
   
     )
   } else {
@@ -81,13 +82,13 @@ app.post(`/api/user/auth`,async (req,res) =>{
     console.log(res.statusCode)
     if (res.statusCode < 300){
       res.send("Secure Login")
-     return res.status(200).json(req.user)
-
-      
+      res.status(200).json(req.email)
+      console.log()
+     
     } 
     
   })
-    
+
 
   // Generate JWT
     const generateToken = (id) => {
