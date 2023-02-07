@@ -67,6 +67,7 @@ const EditProfile = () => {
             <label><h2><br/> Welcome to Passion4Travel website </h2></label>  <br/> 
           
               <br/>
+              <h5> Your email must be entered in order to submit succesfully!</h5><br/>
               <label> FullName:<input type="text" value={fullname} onChange={(e) => {setFullname(e.target.value); 
               setSubmitted(false) }} /></label><br/>
               <h>Insert your Fullname in the space provided or </h><br/> 
