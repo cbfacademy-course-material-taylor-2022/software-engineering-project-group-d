@@ -187,11 +187,11 @@ Narrative:
 **Then** I should receive a message ‘thank you for visiting Passion4Travel app…’
 
 
-## Wireframes
+## 6. Wireframes
 ### Landing Page, SignIn and Register Page Wireframes
 ![image](https://user-images.githubusercontent.com/111147873/217080705-e55c4133-1294-47f7-8ee1-6363eac5a6be.png)
 
-### User Dashboard Wireframe
+###  User Dashboard Wireframe
 ![Wireframe - User HomePage](https://user-images.githubusercontent.com/111147873/217080934-ad06b787-9026-4fd7-b0f6-b2f6b625c82c.jpg)
 
 ### Search Wireframe
@@ -206,14 +206,14 @@ Narrative:
 ### Edit Profile Wireframe
 ![Wireframe -Edit Profile Page](https://user-images.githubusercontent.com/111147873/217080939-40ba0204-d3b7-49a5-8cd9-4f7b5a07ef16.png)
 
-References:
+## 7. References:
 https://www.w3schools.com/react/react_usestate.asp
 
 Session Notes/ Recorded sessions
 
-Acknowledgement
+## 8. Deployment: to be commission in the next Phase of the Project
 
-CBF TAs - Andrew, 
+## 9. Acknowledgement
 
+ALL TAs of CBF, Clare and Mariam
 
-Deployment: to be considered
