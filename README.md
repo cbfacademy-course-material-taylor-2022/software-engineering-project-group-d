@@ -24,7 +24,7 @@ A MERN stack based project on social media application that enable user share th
 - Password is stored in database in encrypted format 
 
 
-## Userstories
+## User Stories
 
 ### 1. Menu Toolbar
 
