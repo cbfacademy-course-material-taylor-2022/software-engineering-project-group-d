@@ -10,52 +10,10 @@ import Register from "./components/Register";
 import UserHome from "./pages/UserHome";
 import ProfilePage from "./pages/profilePage";
 
-
-// SERVICES THAT CALL OUR API ENDPOINTS
-import { getAllProfiles } from "./services/profileService";
-
-
 function App() {
-  const [profiles, setProfiles] = useState(null);
-
-  useEffect(() => {
-    async function getProfiles() {
-      if (!profiles) {
-        const response = await getAllProfiles();
-        setProfiles(response);
-      }
-    }
-
-    getProfiles();
-  }, [profiles]);
-
-  const renderProfile = (user) => {
-    return (
-      <li key={user._id}>
-        <h3>
-          {`${user.fullname} 
-           ${user.email}`}
-           ${user.Age}`}
-           ${user.Gender}`}
-           ${user.Password}`}
-           ${user.ChangePassword}`}
-           ${user.NewPassword}`}
-           
-        </h3>
-        <p>{user.location}</p>
-      </li>
-    );
-  };
-
   return (
     <div>
-      <ul>
-        {profiles && profiles.length > 0 ? (
-          profiles.map((profile) => renderProfile(profile))
-        ) : (
-          <>
-          {/* <p>No profiles found</p> */}
-           
+      <ul>       
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<UserHome/>}/>
@@ -65,13 +23,7 @@ function App() {
                 <Route path="/profile" element={<ProfilePage/>} />
                 <Route path="/editProfile" element={<EditProfile/>}/>
               </Routes>
-            </BrowserRouter>
-     
-           
-           {/* <EditProfile/> */}
-           {/* <UserHome/> */}
-        </>  
-        )}
+            </BrowserRouter>  
       </ul>
     </div>
   );
