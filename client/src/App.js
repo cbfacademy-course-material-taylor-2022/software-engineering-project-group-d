@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Homepage from "./pages/Homepage"
@@ -53,28 +53,24 @@ function App() {
         {profiles && profiles.length > 0 ? (
           profiles.map((profile) => renderProfile(profile))
         ) : (
-<<<<<<< HEAD
-        //<p> No profiles found</p>
-            <EditProfile/>
-=======
           <>
           {/* <p>No profiles found</p> */}
            
-          <BrowserRouter>
-              <Route exact path="/" render={() =>(<UserHome/>)}/>
-              <Route exact path="/about" render={() =>(<About/>)} />
-              <Route exact path="/signin" render={() =>(<SignIn/>)} />
-              <Route exact path="/register" render={() =>(<Register/>)} />
-              <Route exact path="/profile" render={() =>(<ProfilePage/>)} />
-              <Route exact path="/editProfile" render={() =>(<EditProfile/>)} />
-          </BrowserRouter>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<UserHome/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/signin" element={<SignIn />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/profile" element={<ProfilePage/>} />
+                <Route path="/editProfile" element={<EditProfile/>}/>
+              </Routes>
+            </BrowserRouter>
      
            
            {/* <EditProfile/> */}
            {/* <UserHome/> */}
         </>  
-         
->>>>>>> e4c031f1eff5c3c0fdf0d565a1d14adc5f0b19b7
         )}
       </ul>
     </div>
