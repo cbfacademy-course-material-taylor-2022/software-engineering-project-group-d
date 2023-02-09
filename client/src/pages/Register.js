@@ -54,7 +54,14 @@ export default function Register() {
         <container>
           <NavBar/>
       </container>
-      <form onSubmit={registerUser}>
+      
+      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/>  <br/><br/>
+      <br/><br/>
+    
+
+      <form className='register' onSubmit={registerUser}>
         <h3> <FaUser /> Register</h3>
 
         <div className="mb-3">

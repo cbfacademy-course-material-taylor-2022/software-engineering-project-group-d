@@ -11,7 +11,7 @@ mongoose.connect("mongodb+srv://Passion4Travel:Passion4Travel@cluster0.c7skzpl.m
 const UserModel = require("./models/Users");
 const ProfileModel = require("./models/Profiles")
 const PostModel = require("./models/Posts")
-
+ 
 
 const app = express();
 

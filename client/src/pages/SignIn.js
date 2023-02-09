@@ -55,13 +55,15 @@ export default function SignIn() {
     <>
     <div >
     <section>
-      <NavBar/>
-      <h3><FaSignInAlt/>Sign In</h3>
+      <NavBar/> <br/><br/>
     </section>
+    <br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
     <section  >
       <form onSubmit={loginUser} >
       
         <div className="mb-3">
+        <h3><FaSignInAlt/>Sign In</h3>
           <label>Email address</label>
           <input
             type="email"

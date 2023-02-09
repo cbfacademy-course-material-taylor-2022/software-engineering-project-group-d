@@ -61,8 +61,12 @@ const EditProfile = () => {
     <>
     <NavBar/>
     <MenuToolbar/>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
 
-      <form onSubmit={updateProfile} className='form'>
+      <form onSubmit={updateProfile} className='profile'>
             <div> 
             <label><h2><br/> Welcome to Passion4Travel website </h2></label>  <br/> 
           
@@ -70,30 +74,30 @@ const EditProfile = () => {
               <h5> Your email must be entered in order to submit succesfully!</h5><br/>
               <label> FullName:<input type="text" value={fullname} onChange={(e) => {setFullname(e.target.value); 
               setSubmitted(false) }} /></label><br/>
-              <h>Insert your Fullname in the space provided or </h><br/> 
+              <h6>Insert your Fullname in the space provided or </h6><br/> 
               <br/>  <label> Email:<input type="text" value={email} onChange={(e) => {setEmail(e.target.value); 
                 setSubmitted(false) }} /></label><br/>
-                <h>Insert your Email</h><br/> 
+                <h6>Insert your Email</h6><br/> 
                 <br/> <label >Bio: <input type="text" value={bio} onChange={(e) => {setBio(e.target.value);
                 setSubmitted(false) }} /></label><br/>
-                <h>Insert your Bio</h><br/> 
+                <h6>Insert your Bio</h6><br/> 
                 <br/> <label>Age: <input type="number" value={age} onChange={(e) => {setAge(e.target.value); 
                 setSubmitted(false) }} /></label><br/>
-                <h>Insert your Age</h><br/> 
+                <h6>Insert your Age</h6><br/> 
                 <br/> <label >Gender: <input type="text" value={gender} onChange={(e) => {setGender(e.target.value);
                 setSubmitted(false) }} /></label><br/>
-                <h>Insert your Gender</h><br/> 
+                <h6>Insert your Gender</h6><br/> 
                 <br/> <label >Password: <input type="password" value={password} onChange={(e) => {setPassword(e.target.value); 
                 setSubmitted(false) }} /></label><br/>
-                <h>Insert your Password</h><br/> 
+                <h6>Insert your Password</h6><br/> 
                 <br/> <h> ForgottenPassword </h><br/> 
                 <br/> <label >ChangePassword: <input type="password" value={changepassword} onChange={(e) => {setChangePassword(e.target.value); 
                 setSubmitted(false) }} /></label><br />
                 
-                  <h>Insert New Password</h><br/>
+                  <h6>Insert New Password</h6><br/>
                 <br/> <label >NewPassword: <input type="password" value={newpassword} onChange={(e) => {setNewPassword(e.target.value); 
                 setSubmitted(false) }} /></label><br />
-                  {/* <h>Insert your New Password</h><br/>  */}
+                  <h6>Insert your New Password</h6><br/> 
                   <br/> 
             </div>
 

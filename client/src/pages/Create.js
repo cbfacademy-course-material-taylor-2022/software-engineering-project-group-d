@@ -40,11 +40,11 @@ export default function Create(){
 
                     <input accept="image/*" id="icon-button-file" type="file" style={{ display: 'none' }} />
 
-                    {/* <label htmlFor="icon-button-file">
-                        <IconButton color="primary" aria-label="upload picture" component="span">
+                    <label htmlFor="icon-button-file">
+                        {/* <Button color="primary" aria-label="upload picture" component="span">
                             <PhotoCamera />
-                        </IconButton>
-                    </label> */}
+                        </Button> */}
+                    </label>
 
                       {/* <TextField id="first-name" label="Name" value={this.state.name}
                             onChange={this.handleChange('name')} margin="normal"  /> */}

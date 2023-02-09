@@ -16,6 +16,22 @@ const userSchema = new Schema({
     },
   bio: 
   {type: String,
+  },
+  profilePicture: {
+    type: String,
+    default: "",
+  },
+  coverPicture: {
+    type: String,
+    default: "",
+  },
+  followers: {
+    type: Array,
+    default: [],
+  },
+  followings: {
+    type: Array,
+    default: [], 
   }
 });
 
