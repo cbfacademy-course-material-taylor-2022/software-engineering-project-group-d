@@ -26,27 +26,27 @@ const EditProfile = () => {
           <br/>
           <label> FullName:<input type="text" value={fullname} onChange={(e) => {setFullname(e.target.value); 
           setSubmitted(false) }} /></label><br/>
-          <h>Insert your Fullname in the space provided or </h><br/> 
+          <h1>Insert your Fullname in the space provided or </h1><br/> 
           <br/>  <label> Email:<input type="text" value={email} onChange={(e) => {setEmail(e.target.value); 
             setSubmitted(false) }} /></label><br/>
-            <h>Insert your Email</h><br/> 
+            <h1>Insert your Email</h1><br/> 
             <br/> <label>Age: <input type="number" value={age} onChange={(e) => {setAge(e.target.value); 
             setSubmitted(false) }} /></label><br/>
-             <h>Insert your Age</h><br/> 
+             <h1>Insert your Age</h1><br/> 
              <br/> <label >Gender: <input type="text" value={gender} onChange={(e) => {setGender(e.target.value);
              setSubmitted(false) }} /></label><br/>
-             <h>Insert your Gender</h><br/> 
+             <h1>Insert your Gender</h1><br/> 
              <br/> <label >Password: <input type="password" value={password} onChange={(e) => {setPassword(e.target.value); 
             setSubmitted(false) }} /></label><br/>
-             <h>Insert your Password</h><br/> 
-             <br/> <h> ForgottenPassword </h><br/> 
+             <h1>Insert your Password</h1><br/> 
+             <br/> <h1> ForgottenPassword </h1><br/> 
              <br/> <label >ChangePassword: <input type="password" value={changepassword} onChange={(e) => {setChangePassword(e.target.value); 
             setSubmitted(false) }} /></label><br />
              
-               <h>Insert New Password</h><br/>
+               <h1>Insert New Password</h1><br/>
              <br/> <label >NewPassword: <input type="password" value={newpassword} onChange={(e) => {setNewPassword(e.target.value); 
             setSubmitted(false) }} /></label><br />
-               {/* <h>Insert your New Password</h><br/>  */}
+               {/* <h1>Insert your New Password</h1><br/>  */}
                <br/> 
         </div>
 
