@@ -32,7 +32,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/search" element={<Search/>} />
           <Route path="/profile" element={<ProfilePage/>} />
-          <Route path="/create" element={<Create/>} />
           <Route path="/editProfile" element={<EditProfile/>}/>
         </Routes>
       </BrowserRouter>

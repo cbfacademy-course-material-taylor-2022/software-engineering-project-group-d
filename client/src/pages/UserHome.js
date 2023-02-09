@@ -8,8 +8,7 @@ import '../styles/home.css'
 import '../styles/profile.css'
 import '../styles/menuToolbar.css'
 
-export default function UserHome (){
-  
+export default function UserHome(){
     return <>
       <div className="homeContainer">
         
