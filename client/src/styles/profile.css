@@ -3,7 +3,7 @@ form.profile {
     width: 700px;
     position: relative;
     top: 80%;
-    left: 70%;
+    left: 60%;
     background-color: rgba(127, 26, 72, 0.13);
     border-radius: 10px;
     -webkit-box-shadow: 0px 0px 16px -8px rgba(0,0,0,0.68); 
@@ -11,6 +11,11 @@ form.profile {
     margin: 10px 0;
     padding: 20px;
     align-items: center;
+}
+
+::placeholder{
+   color: black;
+
 }
 .editProfile {
     width: 73%;
@@ -28,6 +33,7 @@ form.profile {
     padding: 20;
     margin: 0;
     list-style: none;
+    
 
 }
 .sidebar {
