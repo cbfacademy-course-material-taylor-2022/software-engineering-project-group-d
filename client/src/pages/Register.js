@@ -41,6 +41,9 @@ export default function Register() {
 		if (data._id !== "") {
 			alert('Login successful')
 			navigate("/user")
+      localStorage.setItem('user', data.email)
+      console.log(email)
+      const { email } = data.email
 		}
     else {
 			alert('error test')
@@ -51,7 +54,14 @@ export default function Register() {
         <container>
           <NavBar/>
       </container>
-      <form onSubmit={registerUser}>
+      
+      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/><br/><br/>
+      <br/><br/><br/><br/>  <br/><br/>
+      <br/><br/>
+    
+
+      <form className='register' onSubmit={registerUser}>
         <h3> <FaUser /> Register</h3>
 
         <div className="mb-3">

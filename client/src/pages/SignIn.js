@@ -19,7 +19,7 @@ export default function SignIn() {
   
   
 
-  async function loginUser(event) {
+ async function loginUser(event) {
 		event.preventDefault()
 
 	const response = await fetch('http://localhost:8080/api/user/auth', 
@@ -42,22 +42,28 @@ export default function SignIn() {
 			
 			alert('Login successful')
       navigate("/user")
+      localStorage.setItem('user', data.email)
+      console.log(email)
+      const { email } = data.email
      
 		} else {
 			alert('Please check your username and password')
 		}
   }
+  
   return (
     <>
     <div >
     <section>
-      <NavBar/>
-      <h3><FaSignInAlt/>Sign In</h3>
+      <NavBar/> <br/><br/>
     </section>
+    <br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
     <section  >
       <form onSubmit={loginUser} >
       
         <div className="mb-3">
+        <h3><FaSignInAlt/>Sign In</h3>
           <label>Email address</label>
           <input
             type="email"

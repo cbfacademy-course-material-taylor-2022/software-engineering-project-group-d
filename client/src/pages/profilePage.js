@@ -3,11 +3,18 @@ import {Link} from 'react-router-dom';
 // import Logo from "../components/Logo";
 import NavBar from "../components/NavBar";
 import MenuToolbar from "../components/MenuToolbar";
-import Feed from "../components/feed";
 import '../styles/profile.css'
 
 
+
+
 export default function ProfilePage(){
+
+
+  const userName = localStorage.getItem('user');
+  const bioInfo = localStorage.getItem('bio')
+ 
+
     return <>
     <div >
         <NavBar/>
@@ -16,9 +23,9 @@ export default function ProfilePage(){
         <br/><br/><br/>
             <div className="editProfile">
                 <div className="postWrapper">
-                    <div className="editProfileText">
-                        <h5>Username</h5>
-                        <p>Saved user bio info</p>
+                    <div className="editProfileText" >
+                        <h5>{`Username: ${userName}`} </h5>
+                        <p>{`Bio: ${bioInfo}`}</p>
                         <ul><Link to ='/editProfile'>
                             <button className="editProfileButton">Edit Profile</button>
                             </Link></ul>
@@ -31,7 +38,7 @@ export default function ProfilePage(){
         </div>
     </div>
     </>
-    }
+    };
 
     
 

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
+const Profile = mongoose.model("profiles")
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { protect } = require('../middleware/authMiddleware')
@@ -64,6 +65,7 @@ app.post(`/api/user/auth`,async (req,res) =>{
       email: user.email,
       token: generateToken(user._id),
     },
+    
   
     )
   } else {
@@ -81,13 +83,14 @@ app.post(`/api/user/auth`,async (req,res) =>{
     console.log(res.statusCode)
     if (res.statusCode < 300){
       res.send("Secure Login")
-     return res.status(200).json(req.user)
-
-      
+      res.status(200).json(req.email)
+      console.log()
+     
     } 
     
   })
-    
+
+
 
   // Generate JWT
     const generateToken = (id) => {

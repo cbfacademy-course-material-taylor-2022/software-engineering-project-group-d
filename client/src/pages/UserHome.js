@@ -8,8 +8,7 @@ import '../styles/home.css'
 import '../styles/profile.css'
 import '../styles/menuToolbar.css'
 
-export default function UserHome (){
-  
+export default function UserHome(){
     return <>
       <div className="homeContainer">
         
@@ -17,7 +16,7 @@ export default function UserHome (){
         <NavBar/>
         </div>
         <MenuToolbar/>
-        <div> 
+        <div id="scroll-container"> 
         <div className="sidebarWrapper">
         <ul className="sidebarList">
            <Feed/>

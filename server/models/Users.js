@@ -14,6 +14,25 @@ const userSchema = new Schema({
   password: 
     {type: String,
     },
+  bio: 
+  {type: String,
+  },
+  profilePicture: {
+    type: String,
+    default: "",
+  },
+  coverPicture: {
+    type: String,
+    default: "",
+  },
+  followers: {
+    type: Array,
+    default: [],
+  },
+  followings: {
+    type: Array,
+    default: [], 
+  }
 });
 
 const UserModel = mongoose.model("users", userSchema);
