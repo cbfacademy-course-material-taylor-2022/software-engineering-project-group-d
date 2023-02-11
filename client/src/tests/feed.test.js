@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Feed from './feed';
+import Feed from '../components/feed';
 
 test('renders Feed component', () => {
 render(<Share/>); 
