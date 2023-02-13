@@ -1,114 +1,84 @@
 // The majority of this code was taken from:
 //https://github.com/the-debug-arena/login-registration/blob/main/src/components/signup_component.js
 
-// import React, { Component } from 'react'
-// import NavBar from './NavBar'
+import React from "react"
+import { useState, useContext } from 'react'
+import bcrypt from 'bcryptjs'
+import { FaSignInAlt } from 'react-icons/fa'
+import { useNavigate } from "react-router-dom"
+import NavBar from "../components/NavBar"
+import "../styles/auth.css"
+import { AuthContext } from "../context/AuthContext";
+import { loginCall } from "../services/userService";
 
-// export default class SignIn extends Component {
-//   render() {
-//     return (
-//       <>
-//       <container>
-//         <NavBar/>
-//     </container>
-//       <form>
-//         <h3>Sign In</h3>
 
-//         <div className="mb-3">
-//           <label>Email address</label>
-//           <input
-//             type="email"
-//             className="form-control"
-//             placeholder="Enter email"
-//           />
-//         </div>
 
-//         <div className="mb-3">
-//           <label>Password</label>
-//           <input
-//             type="password"
-//             className="form-control"
-//             placeholder="Enter password"
-//           />
-//         </div>
+export default function SignIn() {
 
-//         <div className="mb-3">
-//           <div className="custom-control custom-checkbox">
-//             <input
-//               type="checkbox"
-//               className="custom-control-input"
-//               id="customCheck1"
-//             />
-//             <label className="custom-control-label" htmlFor="customCheck1">
-//               Remember me
-//             </label>
-//           </div>
-//         </div>
+  const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+  const navigate = useNavigate()
+  const { isFetching, dispatch } = useContext(AuthContext);
 
-//         <div className="d-grid">
-//           <button type="submit" className="btn btn-primary">
-//             Submit
-//           </button>
-//         </div>
-//         <p className="forgot-password text-right">
-//           Forgot <a href="#">password?</a>
-//         </p>
-//       </form>
-//       </>
-//     )
-//   }
-// }
-
-import React, { Component } from "react";
-
-export default class SignIn extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: "",
-      password: "",
-    };
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleSubmit(e) {
+  const handleClick = (e) => {
     e.preventDefault();
-    const { email, password } = this.state;
-    console.log(email, password);
-    fetch("http://localhost:5000/login-user", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data, "userRegister");
-        if (data.status == "ok") {
-          alert("login successful");
-          window.localStorage.setItem("token", data.data);
-          window.location.href = "./userDetails";
-        }
-      });
-  }
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <h3>Sign In</h3>
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
+  };
+  
 
+//  async function loginUser(event) {
+// 		event.preventDefault()
+
+// 	const response = await fetch('http://localhost:8080/api/user/auth', 
+//     {
+//       mode:'cors',
+// 			method: 'POST',
+// 			headers: {
+// 				'Content-Type': 'application/json',
+// 			},
+// 			body: JSON.stringify({
+// 				email,
+// 				password,
+// 			}),
+// 		})
+//     const data = await response.json()
+//     const salt = await bcrypt.genSalt(10)
+//     const hashedPassword = bcrypt.hashSync(password, '$2a$10$CwTycUXWue0Thq9StjUM0u')
+
+// 		if (data.email === email && bcrypt.compare(password, data.password)) {
+			
+// 			alert('Login successful')
+//       navigate("/user")
+//       localStorage.setItem('user', data.email)
+//       console.log(email)
+//       const { email } = data.email
+     
+// 		} else {
+// 			alert('Please check your username and password')
+// 		}
+  // }
+  
+  return (
+    <>
+    <div >
+    <section>
+      <NavBar/>
+      <h3><FaSignInAlt/>Sign In</h3>
+    </section>
+    <section  >
+      <form onSubmit={handleClick} >
+      
         <div className="mb-3">
           <label>Email address</label>
           <input
             type="email"
+            value={email}
             className="form-control"
             placeholder="Enter email"
-            onChange={(e) => this.setState({ email: e.target.value })}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
 
@@ -116,15 +86,17 @@ export default class SignIn extends Component {
           <label>Password</label>
           <input
             type="password"
+            value={password}
             className="form-control"
             placeholder="Enter password"
-            onChange={(e) => this.setState({ password: e.target.value })}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <div className="custom-control custom-checkbox">
             <input
+              height={"20px"}
               type="checkbox"
               className="custom-control-input"
               id="customCheck1"
@@ -133,7 +105,7 @@ export default class SignIn extends Component {
               Remember me
             </label>
           </div>
-        </div>
+        </div> */}
 
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
@@ -141,9 +113,11 @@ export default class SignIn extends Component {
           </button>
         </div>
         <p className="forgot-password text-right">
-          <a href="/sign-up">Sign Up</a>
+          <a href="/register">Sign Up</a>
         </p>
       </form>
+      </section>
+      </div>
+    </>   
     );
   }
-}

@@ -6,56 +6,57 @@ export const Users = [
     },
     {
       id:2,
-      profilePicture: "assets/persons/2.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Janell Shrum",
     },
     {
       id:3,
-      profilePicture: "assets/persons/3.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Alex Durden",
     },
     {
       id:4,
-      profilePicture: "assets/persons/4.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Dora Hawks",
     },
     {
       id:5,
-      profilePicture: "assets/persons/5.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Thomas Holden",
     },
     {
       id:6,
-      profilePicture: "assets/persons/6.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Shirley Beauchamp",
     },
     {
       id:7,
-      profilePicture: "assets/persons/7.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Travis Bennett",
     },
     {
       id:8,
-      profilePicture: "assets/persons/8.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Kristen Thomas",
     },
     {
       id:9,
-      profilePicture: "assets/persons/9.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Gary Duty",
     },
     {
       id:10,
-      profilePicture: "assets/persons10.jpg",
+      profilePicture: "imgs/profile/profilePlaceholder.jpg",
       username: "Angela Kocaoglu",
     },
   ];
 
+ 
   export const Posts = [
     {
       id: 1,
-      desc: "Quick Trip to Tarshish",
-      photo: "imgs/profile/Flo.jpg",
+      desc: "Views",
+      photo: "imgs/views.jpg",
       date: "5 mins ago",
       userId: 1,
       like: 32,
@@ -64,7 +65,7 @@ export const Users = [
     {
       id: 2,
       desc: "Beautiful Day indeed.",
-      photo: "assets/post/2.jpg",
+      photo: "imgs/dummy/dummyData2.jpg",
       date: "15 mins ago",
       userId: 2,
       like: 2,
@@ -73,7 +74,7 @@ export const Users = [
     {
       id: 3,
       desc: "Every moment is a fresh beginning.",
-      photo: "assets/post/3.jpg",
+      photo: "imgs/dummy/dummyData3.jpg",
       date: "1 hour ago",
       userId: 3,
       like: 61,
@@ -82,7 +83,7 @@ export const Users = [
     {
       id: 4,
       desc: "Love for food .",
-      photo: "assets/post/4.jpg",
+      photo: "imgs/dummy/dummyData4.jpg",
       date: "4 hours ago",
       userId: 4,
       like: 7,
@@ -91,7 +92,7 @@ export const Users = [
     {
       id: 5,
       desc: "It's everywhere",
-      photo: "assets/post/5.jpg",
+      photo: "imgs/dummy/dummyData5.jpg",
       date: "5 hours ago",
       userId: 5,
       like: 23,
@@ -100,7 +101,7 @@ export const Users = [
     {
       id: 6,
       desc: "Hatred For None.",
-      photo: "assets/post/1.jpg",
+      photo: "imgs/dummy/dummyData6.jpg",
       date: "1 day ago",
       userId: 6,
       like: 44,

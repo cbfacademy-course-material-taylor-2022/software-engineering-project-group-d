@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes, useHistory } from "react-router-dom";
-import "react-toastify/dist/ReactToastify.css";
+// import "react-toastify/dist/ReactToastify.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 import Homepage from "./pages/Homepage"
@@ -10,9 +10,8 @@ import SignIn from "./pages/SignIn";
 import Register from "./pages/Register";
 import UserHome from "./pages/UserHome";
 import ProfilePage from "./pages/profilePage";
-import Post from "./components/post";
-import CreatePost from "./pages/CreatePost";
-// import "./App.css";
+import Search from "./pages/Search";
+import Create from "./pages/Create";
 
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllUsers } from "./services/userService";
@@ -31,21 +30,20 @@ function App() {
   return (
   <>
     <div>
-      <ul>
-        {profiles && profiles.length > 0 ? (
-          profiles.map((profile) => renderProfile(profile))
-        ) : (
-          //<p>No profiles found</p>
-          <BrowserRouter>
-          <Route exact path="/" render={() =>(<CreatePost/>)}/>
-          <Route exact path="/about" render={() =>(<About/>)} />
-          <Route exact path="/signin" render={() =>(<SignIn/>)} />
-          <Route exact path="/register" render={() =>(<Register/>)} />
-          <Route exact path="/profile" render={() =>(<ProfilePage/>)} />
-          <Route exact path="/editProfile" render={() =>(<EditProfile/>)} />
-          <Route exact path="/create" render={() =>(<Post/>)} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage/>}/>
+          <Route path="/user" element={<UserHome/> } />
+          <Route path="/about" element={<About/>} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/search" element={<Search/>} />
+          <Route path="/profile" element={<ProfilePage/>} />
+          <Route path="/create" element={<Create/>} />
+          <Route path="/editProfile" element={<EditProfile/>}/>
+        </Routes>
       </BrowserRouter>
-      </ul>  
+      
     </div>
     
   </>

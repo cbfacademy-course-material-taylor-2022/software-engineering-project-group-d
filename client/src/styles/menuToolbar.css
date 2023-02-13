@@ -11,6 +11,25 @@
     margin: 10px 0;
   
 }
+button1{
+    margin-top: 10px;
+    /* width: 100%; */
+    background-image: linear-gradient(to right, #DA22FF 0%, #9733EE  51%, #DA22FF  100%);
+    color: #080710;
+    padding: 5px 0;
+    font-size: px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    
+}
+.profileImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
 ::-webkit-scrollbar {
     width: 5px;

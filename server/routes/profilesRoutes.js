@@ -1,43 +1,61 @@
 const mongoose = require("mongoose");
 const Profile = mongoose.model("profiles");
+const User = mongoose.model("users");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const { protect } = require('../middleware/authMiddleware')
 
-const profileRoutes = (app) => {
-  app.get(`/api/profile`, async (req, res) => {
-    const profiles = await Profile.find();
+const profilesRoutes = (app) => {
 
-    return res.status(200).send(profiles);
-  });
 
-  app.post(`/api/profile`, async (req, res) => {
-    const profile = await Profile.create(req.body);
 
-    return res.status(201).send({
-      error: false,
-      profile,
-    });
-  });
+// Send email address to get bio display
 
-  app.put(`/api/profile/:id`, async (req, res) => {
-    const { id } = req.params;
+app.post(`/api/user/profile`, async (req,res) =>{
+  const {bio, age, email, gender} = req.body
 
-    const profile = await Profile.findByIdAndUpdate(id, req.body);
+//- first I throw an error if email not filled
+  if (!email){
+    res.status(400)
+    alert('Please add email')
+  }
 
-    return res.status(202).send({
-      error: false,
-      profile,
-    });
-  });
+//check if user exists by email
+  // const userExists = await Profile.findOne({email})
+  // if (userExists){
+  //   res.status(200)
+  //   console.log(res.body, "User info")
+    
+  
+  // }
 
-  app.delete(`/api/profile/:id`, async (req, res) => {
-    const { id } = req.params;
+  
+  const bioUpdate = Profile.updateOne({$set:{bio, age, email, gender}})
 
-    const profile = await Profile.findByIdAndDelete(id);
+  if(bioUpdate) {
+    res.status(202).json({
+      bio, age, email, gender
+    })
+  }else {
+    alert("Invalid user data")
+    res.status(400)
+    
+  }
+  // else{
+  //   Profile.create({bio, age, email, gender})
+  //   res.status(202).json({
+    
+  //    bio: user.bio,
+  //     email: user.email,
+  //     gender: user.gender,
+  //     age: user.age})
+  // }
 
-    return res.status(202).send({
-      error: false,
-      profile,
-    });
-  });
-};
 
-module.exports = profileRoutes;
+//updating a user info - this adds the req user info to our database
+ 
+//   console.log(req.body)
+})
+}
+
+module.exports = profilesRoutes;

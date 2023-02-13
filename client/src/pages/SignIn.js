@@ -7,7 +7,8 @@ import bcrypt from 'bcryptjs'
 import { FaSignInAlt } from 'react-icons/fa'
 import { useNavigate } from "react-router-dom"
 import NavBar from "../components/NavBar"
-import "../styles/homepage.css"
+import "../styles/auth.css"
+
 
 
 export default function SignIn() {
@@ -18,7 +19,7 @@ export default function SignIn() {
   
   
 
-  async function loginUser(event) {
+ async function loginUser(event) {
 		event.preventDefault()
 
 	const response = await fetch('http://localhost:8080/api/user/auth', 
@@ -41,22 +42,28 @@ export default function SignIn() {
 			
 			alert('Login successful')
       navigate("/user")
+      localStorage.setItem('user', data.email)
+      console.log(email)
+      const { email } = data.email
      
 		} else {
 			alert('Please check your username and password')
 		}
   }
+  
   return (
     <>
-    <div className="centered">
-    <container>
-      <NavBar/>
-      <h3><FaSignInAlt/>Sign In</h3>
-    </container>
-    
+    <div >
+    <section>
+      <NavBar/> <br/><br/>
+    </section>
+    <br/><br/><br/><br/><br/><br/>
+    <br/><br/><br/><br/><br/><br/>
+    <section  >
       <form onSubmit={loginUser} >
       
         <div className="mb-3">
+        <h3><FaSignInAlt/>Sign In</h3>
           <label>Email address</label>
           <input
             type="email"
@@ -78,9 +85,10 @@ export default function SignIn() {
           />
         </div>
 
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <div className="custom-control custom-checkbox">
             <input
+              height={"20px"}
               type="checkbox"
               className="custom-control-input"
               id="customCheck1"
@@ -89,7 +97,7 @@ export default function SignIn() {
               Remember me
             </label>
           </div>
-        </div>
+        </div> */}
 
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
@@ -100,6 +108,7 @@ export default function SignIn() {
           <a href="/register">Sign Up</a>
         </p>
       </form>
+      </section>
       </div>
     </>   
     );
