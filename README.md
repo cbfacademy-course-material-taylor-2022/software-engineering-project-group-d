@@ -97,13 +97,10 @@ Narrative:
 **When** I click on the register button
 **Then** I should see the RegistrationPage
 
-
 **Scenario 2:**Registration page
 **Given** that I have entered the requested details. 
 **When** I click on the submit button.
 **Then** I should receive a message confirming that I have been registered.
-
-
 
 ### 4. Create a New Post
 
@@ -139,7 +136,6 @@ Narrative:
 **Given** that I have created a new post
 **When** I click on the schedule later button
 **Then** I should receive a message that the post has been scheduled with the date and time...
-
 
 
 ### 5. User Sign in Page
@@ -217,18 +213,26 @@ Session Notes/ Recorded sessions
 
 ## 9. Risk that might impact Travel4Passion MERN Social Media Project functionality
 RAID AND PROJECT ACTIVITY Logs LINK
+
 https://docs.google.com/spreadsheets/d/1Tm3XqSGkOSB_sihoTyOeNkQV2SP-rQfl9NsD57Ja9Yo/edit#gid=1952136770
 
-Due to the contrain of time in light of AWS course/exam which gained upper priority later thus supercide plans to test some functionalilites. For example the twam are still working our how to navigate link to next page.
-Also...... 
+Some of the functionality of the first version of Passion 4 Travel App was not completed due to time constraints with regards to working on the project whilst learning new material, preparing for certifications and combined with gaps in knowledge. This is being resolved with time being freed up to focus on addressing the gaps in knowledge to fix the functionality for the next version.
+Also Issues on Gillian branch:
+When merging the changes from the local repo to the remote repo, the following files in the client package.json file continually had conflicts:
+@material-ui/core
+@material-ui/icons
+@mui/icons-material
+Newer versions of the files were installed to try and resolve the conflicts but this did not resolve the problem.
+
 ##*****HI TEAM YOUR CONTRIBUTION OF ISSUES EXPERIENCED CAN BE ADDED HERE PLS THANK YOU****
 
 ## 10 Plan to mitigate Risk
-Team planned to review the code of irresponsive functionalities with possibility to make change before depolyment in the next phase of the project
+ Email sent to Mariam to try and schedule a session with Clare or a TA possibly next week to hopefully resolve.
+Also, Team planned to review the code of irresponsive functionalities with possibility to make change before depolyment in the next phase of the project
 
 ## 11. Acknowledgement
 
-ALL TAs of CBF, Clare Sudbery and Mariam Sharp
+ALL the TAs of CBF, Clare Sudbery and Mariam Sharp
 
 
 
