@@ -217,11 +217,16 @@ RAID AND PROJECT ACTIVITY Logs LINK
 https://docs.google.com/spreadsheets/d/1Tm3XqSGkOSB_sihoTyOeNkQV2SP-rQfl9NsD57Ja9Yo/edit#gid=1952136770
 
 Some of the functionality of the first version of Passion 4 Travel App was not completed due to time constraints with regards to working on the project whilst learning new material, preparing for certifications and combined with gaps in knowledge. This is being resolved with time being freed up to focus on addressing the gaps in knowledge to fix the functionality for the next version.
+
 Also Issues on Gillian branch:
+
 When merging the changes from the local repo to the remote repo, the following files in the client package.json file continually had conflicts:
 @material-ui/core
+
 @material-ui/icons
+
 @mui/icons-material
+
 Newer versions of the files were installed to try and resolve the conflicts but this did not resolve the problem.
 
 ##*****HI TEAM YOUR CONTRIBUTION OF ISSUES EXPERIENCED CAN BE ADDED HERE PLS THANK YOU****
