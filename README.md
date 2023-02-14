@@ -216,7 +216,7 @@ Session Notes/ Recorded sessions
 ## 8. Deployment: to be commission in the next Phase of the Project
 
 ## 9. Risk that might impact Travel4Passion MERN Social Media Project functionality
-Due to the contrain of time in light of AWS exam which gained upper priority later thus supercide plans to test some functionalilites. For example the twam are still working our how to navigate link to next page.
+Due to the contrain of time in light of AWS course/exam which gained upper priority later thus supercide plans to test some functionalilites. For example the twam are still working our how to navigate link to next page.
 Also...... 
 ##*****HI TEAM YOUR CONTRIBUTION OF ISSUES EXPERIENCED CAN BE ADDED HERE PLS THANK YOU****
 
@@ -225,7 +225,7 @@ Team planned to review the code of irresponsive functionalities with possibility
 
 ## 11. Acknowledgement
 
-ALL TAs of CBF, Clare and Mariam
+ALL TAs of CBF, Clare Sudbery and Mariam Sharp
 
 
 
