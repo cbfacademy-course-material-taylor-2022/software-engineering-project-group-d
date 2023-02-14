@@ -216,6 +216,9 @@ Session Notes/ Recorded sessions
 ## 8. Deployment: to be commission in the next Phase of the Project
 
 ## 9. Risk that might impact Travel4Passion MERN Social Media Project functionality
+RAID AND PROJECT ACTIVITY Logs LINK
+https://docs.google.com/spreadsheets/d/1Tm3XqSGkOSB_sihoTyOeNkQV2SP-rQfl9NsD57Ja9Yo/edit#gid=1952136770
+
 Due to the contrain of time in light of AWS course/exam which gained upper priority later thus supercide plans to test some functionalilites. For example the twam are still working our how to navigate link to next page.
 Also...... 
 ##*****HI TEAM YOUR CONTRIBUTION OF ISSUES EXPERIENCED CAN BE ADDED HERE PLS THANK YOU****
